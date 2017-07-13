@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # fys
 
 > F.Y.S(Find Your Stay), real estate project
@@ -20,3 +21,7 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 ## Backpack
 
 We use [backpack](https://github.com/palmerhq/backpack) to watch and build the application, so you can use the latest ES6 features (module syntax, async/await, etc.).
+=======
+# nha-thue
+Ứng dụng cho thuê nhà
+>>>>>>> b8c0055445c7a5384548f3ca73bc4fdbd01ff590
