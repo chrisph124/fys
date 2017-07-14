@@ -1,92 +1,271 @@
 <template>
-  <div class="container">
-
-    <section class="hero is-primary is-medium">
-      <div class="hero-body">
-        <div class=" has-text-centered">
-          <h1 class="title is-2">
-            Blog post title
-          </h1>
-          <h2 class="subtitle is-4">
-            Blog post subtitle
-          </h2>
-        </div>
+  <div class="column">
+  
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child red post box">
+          <!-- content here -->
+          <p class="subtitle">
+            <a href="#">
+              Category-name
+            </a>
+          </p>
+          <p class="title">
+            Blog #1
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+          </p>
+        </article>
       </div>
-    </section>
-
-    <section class="section blog">
-        <div class="columns">
-          <div class="column is-12">
-            <div class="content blog-post section">
-              <p class="has-text-right has-text-muted">published 2 days ago</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit massa eget mauris hendrerit, sit amet laoreet ex mattis. Aenean finibus massa eget finibus faucibus. Etiam dolor lacus, imperdiet et nisl vitae, lacinia euismod arcu. Aliquam non sapien hendrerit nisi semper rhoncus a eget erat. Maecenas accumsan semper ante eu molestie. Integer tristique erat sit amet posuere cursus. Aliquam placerat sit amet lectus laoreet vestibulum. Sed pharetra neque ac libero ornare, nec viverra ante tristique. Mauris eget urna metus.
-              </p>
-
-              <p>
-                Nunc blandit leo orci, ornare consequat lacus cursus ac. In tincidunt nulla pharetra, vulputate nisl non, molestie tellus. Pellentesque consectetur dolor id diam mattis, at luctus nibh ultricies. Sed ac mi a est venenatis accumsan nec sed urna. Nullam ut interdum elit. Nulla facilisi. Suspendisse lacinia nisi in tincidunt ornare. Nam lobortis justo eu sapien vestibulum, et ullamcorper orci iaculis. Nullam at nulla in eros dictum condimentum vel id ante.
-              </p>
-
-              <p>
-                Morbi mollis ipsum vitae turpis molestie, sollicitudin dictum nunc condimentum. Nullam lobortis metus vitae ligula dictum, in congue est egestas. Aliquam enim massa, fermentum sed massa ut, varius sagittis metus. In eu nisi at eros tincidunt feugiat vitae sed libero. Aliquam urna metus, venenatis id feugiat tristique, sagittis in nunc. Sed volutpat eget neque sit amet convallis. Sed maximus quam sed magna congue, in gravida leo commodo. Mauris auctor nulla ultricies aliquam pharetra. Nulla in tristique sem, nec pellentesque erat. Donec a porttitor leo, vel sollicitudin lectus. Donec dictum mauris non congue efficitur.
-              </p>
-
-              <p>
-                Morbi auctor consequat facilisis. Fusce eu vehicula tellus, eget imperdiet lacus. Praesent dapibus rutrum tellus, vitae sollicitudin nulla tincidunt a. In metus felis, aliquam aliquet convallis eu, vulputate vel nunc. Etiam metus odio, tristique in tristique sed, congue ultricies sapien. Vestibulum velit massa, rhoncus vel suscipit sed, mattis nec odio. Cras justo lectus, tincidunt in interdum vitae, finibus nec neque. Nullam dolor purus, bibendum ut ex vitae, tristique fringilla quam. Sed dapibus mi erat, ut efficitur nulla vulputate id. Quisque turpis ligula, fermentum id sagittis vitae, fermentum vel magna. Nunc neque nunc, commodo nec facilisis eget, mollis mollis massa. Quisque venenatis maximus turpis vitae rhoncus.
-              </p>
-
-              <p>
-                Aenean at dignissim lacus. Etiam id dolor mauris. Aenean mollis sollicitudin blandit. Nulla elementum, metus ut commodo gravida, diam ligula volutpat mauris, dignissim lacinia eros ipsum sit amet dolor. Ut vestibulum sem nec luctus interdum. Integer ut efficitur nisl. Nam eu neque turpis.
-              </p>
-            </div>
-            <div class="card is-fullwidth">
-              <header class="card-header">
-                <p class="card-header-title">
-                  About the author
-                </p>
-                <a class="card-header-icon" href="#top">
-                  <i class="fa fa-angle-up"></i>
+      <!-- is-parent -->
+  
+      <div class="tile is-parent is-6">
+        <article class="tile is-child red post box">
+          <!-- content here -->
+          <p class="subtitle">
+            <a href="#">
+              Category-name
+            </a>
+          </p>
+          <p class="title">
+            Blog #2
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+          </p>
+        </article>
+      </div>
+      <!-- is-6 -->
+  
+      <div class="tile is-vertical is-parent">
+        <article class="tile is-child blue post box">
+          <!-- content here -->
+          <p class="subtitle">
+            <a href="#">
+              Category-name
+            </a>
+          </p>
+          <p class="title">
+            Blog #3
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+          </p>
+        </article>
+        <article class="tile is-child gold post box">
+          <!-- content here -->
+          <p class="subtitle">
+            <a href="#">
+              Category-name
+            </a>
+          </p>
+          <p class="title">
+            Blog #4
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+          </p>
+        </article>
+      </div>
+      <!-- is-vertical -->
+    </div>
+    <!-- first-row -->
+  
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-6">
+        <article class="tile is-child red post box">
+          <!-- content here -->
+          <p class="subtitle">
+            <a href="#">
+              Category-name
+            </a>
+          </p>
+          <p class="title">
+            Blog #5
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+          </p>
+        </article>
+      </div>
+      <!-- is-6 -->
+  
+      <div class="tile is-vertical is-parent">
+        <article class="tile is-child blue post box">
+          <!-- content here -->
+          <p class="subtitle">
+            <a href="#">
+              Category-name
+            </a>
+          </p>
+          <p class="title">
+            Blog #6
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+          </p>
+        </article>
+        <article class="tile is-child gold post box">
+          <!-- content here -->
+          <p class="subtitle">
+            <a href="#">
+              Category-name
+            </a>
+          </p>
+          <p class="title">
+            Blog #7
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+          </p>
+        </article>
+      </div>
+      <!-- is-vertical -->
+  
+      <div class="tile is-parent">
+        <article class="tile is-child red post box">
+          <!-- content here -->
+          <p class="subtitle">
+            <a href="#">
+              Category-name
+            </a>
+          </p>
+          <p class="title">
+            Blog #8
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+          </p>
+        </article>
+      </div>
+      <!-- is-parent -->
+    </div>
+    <!-- second-row -->
+  
+    <div class="tile is-ancestor">
+  
+      <div class="tile is-vertical is-8">
+  
+        <div class="tile">
+          <div class="tile is-parent">
+            <article class="tile is-child red post box">
+              <!-- content here -->
+              <p class="subtitle">
+                <a href="#">
+                  Category-name
                 </a>
-              </header>
-              <div class="card-content">
-                <article class="media">
-                  <div class="media-left">
-                    <figure class="image is-64x64">
-                      <img src="http://placehold.it/128x128" alt="Image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>John Smith</strong> <small>@johnsmith</small>
-                        <br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                      </p>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <footer class="card-footer">
-                <a class="card-footer-item">Share on Facebook</a>
-                <a class="card-footer-item">Share on Twitter</a>
-                <a class="card-footer-item">Share on G+</a>
-              </footer>
-            </div>
+              </p>
+              <p class="title">
+                Blog #9
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+              </p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child red post box">
+              <!-- content here -->
+              <p class="subtitle">
+                <a href="#">
+                  Category-name
+                </a>
+              </p>
+              <p class="title">
+                Blog #10
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+              </p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child red post box">
+              <!-- content here -->
+              <p class="subtitle">
+                <a href="#">
+                  Category-name
+                </a>
+              </p>
+              <p class="title">
+                Blog #11
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+              </p>
+            </article>
           </div>
         </div>
-    </section>
+        <!-- first-tile-in-is-8 -->
+  
+        <div class="tile">
+          <div class="tile is-parent">
+            <article class="tile is-child red post box">
+              <!-- content here -->
+              <p class="subtitle">
+                <a href="#">
+                  Category-name
+                </a>
+              </p>
+              <p class="title">
+                Blog #12
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+              </p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child red post box">
+              <!-- content here -->
+              <p class="subtitle">
+                <a href="#">
+                  Category-name
+                </a>
+              </p>
+              <p class="title">
+                Blog #13
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+              </p>
+            </article>
+          </div>
+  
+        </div>
+        <!-- second-tile-in-is-8 -->
+  
+      </div>
+      <!-- is-8 -->
+  
+      <div class="tile is-parent">
+        <article class="tile is-child red post box">
+          <!-- content here -->
+          <p class="subtitle">
+            <a href="#">
+              Category-name
+            </a>
+          </p>
+          <p class="title">
+            Blog #14
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+          </p>
+        </article>
+      </div>
+      <!-- is-parent -->
+  
+    </div>
+    <!-- third-row -->
+  
   </div>
-
 </template>
 
 <style>
-.container {
-    margin: 50px 100px;
-    padding: 0;
+.is-ancestor {
+  max-height: 10rem;
+  padding: 0 2.5rem
 }
-
-.title, .subtitle, .hero-body {
-    padding: 0
-}
-
 </style>
