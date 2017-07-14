@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <h3 class="title is-3">
+    <div class="column is-12">
+        <h3 class="title is-3 has-text-centered">
             Điều khoản sử dụng FYS
         </h3>
         <div class="has-text-centered">
@@ -13,14 +13,17 @@
             <p class="headline">
                 <strong>2. Thanh toán:</strong>
             </p>
-            <p>Cách 1: chuyển khoản tới tài khoản của chúng tôi :</p><br>
+            <p>Cách 1: chuyển khoản tới tài khoản của chúng tôi :</p>
+            <br>
     
             <p>Bước 1: Khách hàng đặt phòng, cung cấp thông tin đầy đủ, xác thực.</p>
             <p>Bước 2: Khách hàng chuyển khoản số tiền đặt cọc tới tài khoản của chúng tôi.</p>
             <p>Bước 3: FYS kiểm tra, xác nhận đơn đặt phòng và xác nhận tình trạng phòng.</p>
             <p>Bước 4: Khách hàng kiểm tra thông tin đặt phòng và nhận phòng.</p>
     
-            <br><p>Cách 2: Thanh toán tại địa chỉ của khách hàng hay thanh toán bằng tiền mặt tại FYS:</p><br>
+            <br>
+            <p>Cách 2: Thanh toán tại địa chỉ của khách hàng hay thanh toán bằng tiền mặt tại FYS:</p>
+            <br>
     
             <p>Bước 1: Khách hàng đặt phòng; cung cấp thông tin đầy đủ, xác thực.</p>
             <p>Bước 2: FYS xác thực đơn hàng.</p>
@@ -28,7 +31,9 @@
             <p>Bước 4: FYS sẽ đến nơi của khách hàng và thu tiền đặt cọc trong vòng 24h từ lúc thực hiện giao dịch.</p>
             <p>Bước 5: Khách hàng kiểm tra thông tin đặt phòng và nhận phòng.</p>
     
-            <br><p>Cách 3: Thanh toán bằng tiền mặt tại FYS:</p><br>
+            <br>
+            <p>Cách 3: Thanh toán bằng tiền mặt tại FYS:</p>
+            <br>
     
             <p>Bước 1: Khách hàng đặt phòng; cung cấp thông tin đầy đủ, xác thực.</p>
             <p>Bước 2: FYS xác thực đơn hàng.</p>
@@ -107,31 +112,36 @@
 </template>
 
 <style scoped>
-.container {
-    margin: 50px 100px;
-    padding: 0;
-    border: 1px solid #00d1b2;
-    border-radius: 12px
-}
-
-.has-text-centered {
-    padding: 10px 25px;
-}
-
-.title {
-    background-color: #00d1b2;
-    color: white;
-    padding: 0.4rem;
-}
-
-.title {
-    border-radius: 12px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+.column {
+    padding: 50px 100px;
 }
 
 .headline {
     padding: 1rem 0
 }
 
+.has-text-centered {
+    padding: 10px 25px;
+}
+
+.column>.has-text-centered {
+    border: 1px solid #00d1b2;
+    border-radius: 12px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.column>.title {
+    background-color: #00d1b2;
+    color: white;
+    padding: 0.4rem;
+    border-radius: 12px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+}
+
+.headline {
+    padding: 1rem 0
+}
 </style>
