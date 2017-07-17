@@ -39,6 +39,7 @@
                 </div>
             </div>
             <hr/>
+            <div class="columns is-12">
                 <div class="column is-4">
                     <p>
                         © 2017 - FYS. All Rights Reserved
@@ -55,6 +56,7 @@
                         <i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i>
                     </a>
                 </div>
+            </div>
         </div>
     </footer>
 </template>
@@ -66,7 +68,8 @@
     margin-top: 2.5rem
 }
 
-p, a {
+p,
+a {
     text-align: center;
     font-weight: 500;
     color: #FFF;
@@ -83,7 +86,12 @@ p, a {
     color: #00d1b2;
 }
 
-
+.is-12:not(:last-child) {
+    padding-top: 2rem
+}
+.is-12:not(:first-child) {
+    padding-bottom: 2rem
+}
 
 .is-4 {
     color: white;

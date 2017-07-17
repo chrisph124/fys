@@ -4,9 +4,9 @@
   
       <div id="navMenuExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="/" id='logo'>
-              <img src="~assets/img/fys-logo.png">
-            </a>
+          <a class="navbar-item" href="/" id='logo'>
+            <img src="~assets/img/fys-logo.png">
+          </a>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" href="/documentation/overview/start/">
               Bán
@@ -44,30 +44,32 @@
   
             </div>
           </div>
-          <a class="navbar-item" href="/blog">
-            Blog
-          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="/blog">
+              Blog
+            </a>
+            <div class="navbar-dropdown ">
+              <a class="navbar-item " href="/documentation/overview/start/">
+                Dự án
+              </a>
+              <a class="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
+                Nhà Đất
+              </a>
+              <a class="navbar-item " href="http://bulma.io/documentation/grid/columns/">
+                Mẹo vặt
+              </a>
+            </div>
+          </div>
           <a class="navbar-item " href="/faq">
             FAQ
           </a>
           <a class="navbar-item " href="/contact">
             Liên Hệ
           </a>
-  
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/documentation/overview/start/">
-              Tài khoản của tôi
-            </a>
-            <div class="navbar-dropdown ">
-              <a class="navbar-item " href="/log-in">
-                Đăng nhập
-              </a>
-              <a class="navbar-item " href="/sign-up">
-                Đăng ký
-              </a>
-            </div>
-          </div>
-  
+          <a class="navbar-item" @click="toggleModal()">
+            Tài khoản của tôi
+          </a>
+          <log-in v-if="actived"/>
         </div>
   
         <div class="navbar-end">
@@ -85,6 +87,24 @@
     </nav>
   </div>
 </template>
+
+<script>
+import logIn from '~components/log-in.vue'
+export default {
+  components: { logIn },
+  data () {
+    return {
+      actived: null
+    }
+  },
+  methods: {
+    toggleModal () {
+      this.actived = true
+      logIn.$emit('close', this.actived)
+    }
+  }
+}
+</script>
 
 
 <style scoped>
