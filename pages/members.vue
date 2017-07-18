@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <h3 class="title is-3">
+    <div class="column is-12">
+        <h3 class="title is-3 has-text-centered">
             Đội ngũ nhân viên
         </h3>
         <div class="box">
@@ -77,28 +77,28 @@
 </template>
 
 <style scoped>
-.container {
-    margin: 50px 100px;
-    padding: 0;
-    border: 1px solid #00d1b2;
-    border-radius: 12px
+.column {
+    padding: 50px 100px;
 }
-
 .has-text-centered {
     padding: 10px 25px;
 }
 
-.title,
-.subtitle {
+.column > .box {
+    border: 1px solid #00d1b2;
+    border-radius: 12px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.column > .title {
     background-color: #00d1b2;
     color: white;
     padding: 0.4rem;
-}
-
-.title {
     border-radius: 12px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    margin-bottom: 0;
 }
 
 .box {

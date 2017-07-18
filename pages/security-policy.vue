@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-            <h3 class="title is-3">
+    <div class="column">
+            <h3 class="title has-text-centered">
                 Quyền riêng tư
             </h3>
         <div class= "has-text-centered">
@@ -12,7 +12,7 @@
 </template>
 
 <style scoped>
-.container {
+.column {
     margin: 50px 100px;
     padding: 0;
     border: 1px solid #00d1b2;

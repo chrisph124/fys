@@ -1,9 +1,9 @@
 <template>
-    <div class="container">
-            <h3 class="title is-3">
+    <div class="column is-12">
+            <h3 class="title has-text-centered">
                 F.Y.S
             </h3>
-            <h4 class="subtitle is-4">
+            <h4 class="subtitle has-text-centered">
                 Find Your Stay
             </h4>
         <div class= "has-text-centered">
@@ -15,32 +15,42 @@
 </template>
 
 <style scoped>
-.container {
-    margin: 50px 100px;
-    padding: 0;
-    border: 1px solid #00d1b2;
-    border-radius: 12px
+.column {
+    padding: 50px 100px;
 }
-
 .has-text-centered {
     padding: 10px 25px;
 }
-.title,
-.subtitle {
+
+.column > .has-text-centered {
+    border: 1px solid #00d1b2;
+    border-radius: 12px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.column > .title {
+    background-color: #00d1b2;
+    color: white;
+    padding: 0.4rem;
+    border-radius: 12px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+}
+
+.title, .subtitle {
     background-color: #00d1b2;
     color: white;
     padding: 0.4rem;
 }
 
-.subtitle {
-    padding-top: 0
-}
-
-.title {
-    padding-bottom: 0;
-    border-radius: 12px;
+.column > .subtitle {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    margin-bottom: 0;
+    padding-top: 1rem
 }
+
 
 </style>
