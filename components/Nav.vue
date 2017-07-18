@@ -8,37 +8,37 @@
             <img src="~assets/img/fys-logo.png">
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/documentation/overview/start/">
+            <a class="navbar-link" href="/buy">
               Bán
             </a>
             <div class="navbar-dropdown ">
-              <a class="navbar-item " href="/documentation/overview/start/">
+              <a class="navbar-item " href="/buy/houses">
                 Nhà
               </a>
-              <a class="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
+              <a class="navbar-item " href="/buy/apartments">
                 Căn hộ
               </a>
-              <a class="navbar-item " href="http://bulma.io/documentation/grid/columns/">
+              <a class="navbar-item " href="/buy/villas">
                 Biệt thự
               </a>
   
             </div>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/documentation/overview/start/">
+            <a class="navbar-link" href="/rent">
               Cho thuê
             </a>
             <div class="navbar-dropdown ">
-              <a class="navbar-item " href="/documentation/overview/start/">
+              <a class="navbar-item " href="/rent/houses">
                 Nhà trọ
               </a>
-              <a class="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
+              <a class="navbar-item " href="/rent/rooms">
                 Phòng trọ
               </a>
-              <a class="navbar-item " href="http://bulma.io/documentation/grid/columns/">
+              <a class="navbar-item " href="/rent/apartments">
                 Căn hộ
               </a>
-              <a class="navbar-item " href="http://bulma.io/documentation/elements/box/">
+              <a class="navbar-item " href="/rent/villas">
                 Biệt thự
               </a>
   
@@ -49,13 +49,13 @@
               Blog
             </a>
             <div class="navbar-dropdown ">
-              <a class="navbar-item " href="/documentation/overview/start/">
+              <a class="navbar-item " href="/blog/project">
                 Dự án
               </a>
-              <a class="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
+              <a class="navbar-item " href="/blog/news">
                 Nhà Đất
               </a>
-              <a class="navbar-item " href="http://bulma.io/documentation/grid/columns/">
+              <a class="navbar-item " href="/blog/tips">
                 Mẹo vặt
               </a>
             </div>
@@ -66,10 +66,10 @@
           <a class="navbar-item " href="/contact">
             Liên Hệ
           </a>
-          <a class="navbar-item" @click="toggleModal()">
+          <a class="navbar-item" @click="toggleModal">
             Tài khoản của tôi
           </a>
-          <log-in v-if="actived"/>
+          <my-account :class="{'is-active': actived}" @close="toggleModal" />
         </div>
   
         <div class="navbar-end">
@@ -85,22 +85,23 @@
         </div>
       </div>
     </nav>
+    <search/>
   </div>
 </template>
 
 <script>
-import logIn from '~components/log-in.vue'
+import myAccount from '~components/my-account.vue'
+import search from '~components/search.vue'
 export default {
-  components: { logIn },
+  components: { myAccount, search },
   data () {
     return {
-      actived: null
+      actived: false
     }
   },
   methods: {
     toggleModal () {
-      this.actived = true
-      logIn.$emit('close', this.actived)
+      this.actived = !this.actived
     }
   }
 }
@@ -126,7 +127,6 @@ export default {
 
 .navbar {
   height: 4rem;
-  margin-bottom: 2.5rem;
 }
 
 .navbar-item,
