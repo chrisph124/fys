@@ -3,7 +3,7 @@
   
     <div class="tile is-ancestor">
       <div class="tile is-parent">
-        <article class="tile is-child red post box">
+        <article class="tile is-child gold post box">
           <!-- content here -->
           <p class="subtitle">
             <a href="#">
@@ -74,7 +74,7 @@
   
     <div class="tile is-ancestor">
       <div class="tile is-parent is-6">
-        <article class="tile is-child red post box">
+        <article class="tile is-child blue post box">
           <!-- content here -->
           <p class="subtitle">
             <a href="#">
@@ -92,7 +92,7 @@
       <!-- is-6 -->
   
       <div class="tile is-vertical is-parent">
-        <article class="tile is-child blue post box">
+        <article class="tile is-child gold post box">
           <!-- content here -->
           <p class="subtitle">
             <a href="#">
@@ -106,7 +106,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
           </p>
         </article>
-        <article class="tile is-child gold post box">
+        <article class="tile is-child red post box">
           <!-- content here -->
           <p class="subtitle">
             <a href="#">
@@ -124,7 +124,7 @@
       <!-- is-vertical -->
   
       <div class="tile is-parent">
-        <article class="tile is-child red post box">
+        <article class="tile is-child gold post box">
           <!-- content here -->
           <p class="subtitle">
             <a href="#">
@@ -165,7 +165,7 @@
             </article>
           </div>
           <div class="tile is-parent">
-            <article class="tile is-child red post box">
+            <article class="tile is-child blue post box">
               <!-- content here -->
               <p class="subtitle">
                 <a href="#">
@@ -201,7 +201,7 @@
   
         <div class="tile">
           <div class="tile is-parent">
-            <article class="tile is-child red post box">
+            <article class="tile is-child gold post box">
               <!-- content here -->
               <p class="subtitle">
                 <a href="#">
@@ -240,7 +240,7 @@
       <!-- is-8 -->
   
       <div class="tile is-parent">
-        <article class="tile is-child red post box">
+        <article class="tile is-child blue post box">
           <!-- content here -->
           <p class="subtitle">
             <a href="#">
@@ -264,8 +264,28 @@
 </template>
 
 <style>
+ p, .title {
+  color: white
+} 
 .is-ancestor {
   max-height: 10rem;
   padding: 0 2.5rem
 }
+
+ .subtitle a{
+  color: #00ffff
+}
+
+.gold {
+  background-color: #b76e79;
+}
+
+.blue {
+  background-color: #308014
+}
+
+.red {
+ background-color: #DC143C
+} 
+
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="modal">
-    <div class="modal-background"></div>
+    <div class="modal-background" @click="toggleModal"></div>
     <div class="modal-content">
       <div class="tabs">
         <ul>
@@ -47,7 +47,9 @@ export default {
 </script>
 
 <style scoped>
-
+.modal {
+  z-index: 1000
+}
 .tabs:not(:last-child) {
   margin-bottom: 0
 }
@@ -68,4 +70,13 @@ export default {
   background-color: white;
   border-radius: 10px;
 }
+
+.modal-close {
+  border: 1px solid white;
+}
+
+.modal-close:hover {
+  background-color: #ff3860;
+}
+
 </style>

@@ -1,8 +1,8 @@
 <template>
-    <section class="hero">
+    <section class="hero columns is-hidden-tablet-only is-hidden-mobile is-marginless">
         <div class="hero-body level">
             <div class="column">
-                <h1 class="title has-text-centered is-1">
+                <h1 class="title has-text-centered is-2">
                     Tìm kiếm ngôi nhà bạn yêu thích
                 </h1>
                 <div class="box level-item">
@@ -25,9 +25,6 @@
     padding: 0;
 }
 
-.hero {
-    margin-bottom: 2.5rem
-}
 
 .hero-body {
     position: relative;
@@ -62,7 +59,7 @@
 }
 
 .input {
-    width: 50%;
+    width: 30%;
     border-left: none;
     border-radius: 10px;
     border-top-left-radius: 0;

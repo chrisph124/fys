@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar">
+    <nav class="navbar columns is-marginless">
   
       <div id="navMenuExample" class="navbar-menu">
         <div class="navbar-start">
@@ -75,7 +75,7 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
-              <p class="control">
+              <p class="control columns">
                 <a class="button is-primary" href="/posts">
                   Đăng tin mua - bán , cho thuê
                 </a>
@@ -153,4 +153,5 @@ a.navbar-link:hover {
 a.button {
   font-size: 1.2rem
 }
+
 </style>

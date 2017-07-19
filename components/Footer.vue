@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer">
+    <footer class="footer is-marginless is-paddingless">
         <div class="container is-fluid">
             <div class="columns is-12">
                 <div class="column is-3 has-text-centered">
@@ -64,8 +64,10 @@
 <style scoped>
 .footer {
     background-color: #212121;
-    padding: 0;
-    margin-top: 2.5rem
+}
+
+.container {
+    padding-bottom: 50px
 }
 
 p,
@@ -84,13 +86,6 @@ a {
     font-size: 1.2rem;
     font-weight: bold;
     color: #00d1b2;
-}
-
-.is-12:not(:last-child) {
-    padding-top: 2rem
-}
-.is-12:not(:first-child) {
-    padding-bottom: 2rem
 }
 
 .is-4 {
