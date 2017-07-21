@@ -44,22 +44,9 @@
   
             </div>
           </div>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/blog">
-              Blog
-            </a>
-            <div class="navbar-dropdown ">
-              <a class="navbar-item " href="/blog/project">
-                Dự án
-              </a>
-              <a class="navbar-item " href="/blog/news">
-                Nhà Đất
-              </a>
-              <a class="navbar-item " href="/blog/tips">
-                Mẹo vặt
-              </a>
-            </div>
-          </div>
+          <a class="navbar-item" href="/blog">
+            Blog
+          </a>
           <a class="navbar-item " href="/faq">
             FAQ
           </a>
@@ -90,7 +77,7 @@
 </template>
 
 <script>
-import myAccount from '~components/my-account.vue'
+import myAccount from '~components/registerComp/my-account.vue'
 import search from '~components/search.vue'
 export default {
   components: { myAccount, search },
@@ -109,6 +96,10 @@ export default {
 
 
 <style scoped>
+.navbar {
+  z-index: 999;
+}
+
 .button,
 .button:visited {
   padding: 5px 15px;
@@ -153,5 +144,4 @@ a.navbar-link:hover {
 a.button {
   font-size: 1.2rem
 }
-
 </style>

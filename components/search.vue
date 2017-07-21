@@ -1,18 +1,18 @@
 <template>
-    <section class="hero columns is-hidden-tablet-only is-hidden-mobile is-marginless">
+    <section class="hero columns is-hidden-tablet-only is-hidden-mobile is-marginless is-12">
         <div class="hero-body level">
             <div class="column">
                 <h1 class="title has-text-centered is-2">
                     Tìm kiếm ngôi nhà bạn yêu thích
                 </h1>
                 <div class="box level-item">
-                    <div class="select is-large">
+                    <div class="select is-medium">
                         <select>
                             <option>Mua</option>
                             <option>Thuê</option>
                         </select>
                     </div>
-                    <input class="input is-expanded is-large" type="text" placeholder="Tên thành phố, địa chỉ, quận, huyện, ...">
+                    <input class="input is-medium" type="text" placeholder="Tên thành phố, địa chỉ, quận, huyện, ...">
                 </div>
             </div>
         </div>
@@ -20,11 +20,15 @@
 </template>
 
 <style scoped>
+@media screen and (min-width: 999px) and (max-width: 1239px) {
+  .input {
+      width: 50%
+  }
+}
 .column {
     margin: 50px 100px;
     padding: 0;
 }
-
 
 .hero-body {
     position: relative;
@@ -59,7 +63,7 @@
 }
 
 .input {
-    width: 30%;
+    width: 50%;
     border-left: none;
     border-radius: 10px;
     border-top-left-radius: 0;
