@@ -11,7 +11,6 @@ CREATE TABLE IF NOT EXISTS district (
 ) ;
 
 CREATE INDEX provinceid ON district (provinceid);
-
 --
 -- Dumping data for table `district`
 --

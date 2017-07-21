@@ -10,8 +10,220 @@
         </div>
     
         <div class="box2">
-    
             <nav class="level">
+                <div class="level-item has-text-centered">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-1by1">
+                                <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image">
+                            </figure>
+                            <div class="card-content">
+        
+                                <div class="content">
+                                    <a>@bulmaio</a>.
+                                    <a>#css</a>
+                                    <a>#responsive</a>
+                                    <br>
+                                    <small>11:09 PM - 1 Jan 2016</small>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+    
+                <div class="level-item has-text-centered">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-1by1">
+                                <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image">
+                            </figure>
+                            <div class="card-content">
+        
+                                <div class="content">
+                                    <a>@bulmaio</a>.
+                                    <a>#css</a>
+                                    <a>#responsive</a>
+                                    <br>
+                                    <small>11:09 PM - 1 Jan 2016</small>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+                
+                <div class="level-item has-text-centered">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-1by1">
+                                <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image">
+                            </figure>
+                            <div class="card-content">
+        
+                                <div class="content">
+                                    <a>@bulmaio</a>.
+                                    <a>#css</a>
+                                    <a>#responsive</a>
+                                    <br>
+                                    <small>11:09 PM - 1 Jan 2016</small>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+    
+                <div class="level-item has-text-centered">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-1by1">
+                                <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image">
+                            </figure>
+                            <div class="card-content">
+        
+                                <div class="content">
+                                    <a>@bulmaio</a>.
+                                    <a>#css</a>
+                                    <a>#responsive</a>
+                                    <br>
+                                    <small>11:09 PM - 1 Jan 2016</small>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+
+                <div class="level-item has-text-centered">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-1by1">
+                                <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image">
+                            </figure>
+                            <div class="card-content">
+        
+                                <div class="content">
+                                    <a>@bulmaio</a>.
+                                    <a>#css</a>
+                                    <a>#responsive</a>
+                                    <br>
+                                    <small>11:09 PM - 1 Jan 2016</small>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+    
+                <div class="level-item has-text-centered">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-1by1">
+                                <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image">
+                            </figure>
+                            <div class="card-content">
+        
+                                <div class="content">
+                                    <a>@bulmaio</a>.
+                                    <a>#css</a>
+                                    <a>#responsive</a>
+                                    <br>
+                                    <small>11:09 PM - 1 Jan 2016</small>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+                
+                <div class="level-item has-text-centered">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-1by1">
+                                <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image">
+                            </figure>
+                            <div class="card-content">
+        
+                                <div class="content">
+                                    <a>@bulmaio</a>.
+                                    <a>#css</a>
+                                    <a>#responsive</a>
+                                    <br>
+                                    <small>11:09 PM - 1 Jan 2016</small>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+    
+                <div class="level-item has-text-centered">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-1by1">
+                                <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image">
+                            </figure>
+                            <div class="card-content">
+        
+                                <div class="content">
+                                    <a>@bulmaio</a>.
+                                    <a>#css</a>
+                                    <a>#responsive</a>
+                                    <br>
+                                    <small>11:09 PM - 1 Jan 2016</small>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+
+                <div class="level-item has-text-centered">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-1by1">
+                                <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image">
+                            </figure>
+                            <div class="card-content">
+        
+                                <div class="content">
+                                    <a>@bulmaio</a>.
+                                    <a>#css</a>
+                                    <a>#responsive</a>
+                                    <br>
+                                    <small>11:09 PM - 1 Jan 2016</small>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+
+                <div class="level-item has-text-centered">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-1by1">
+                                <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image">
+                            </figure>
+                            <div class="card-content">
+        
+                                <div class="content">
+                                    <a>@bulmaio</a>.
+                                    <a>#css</a>
+                                    <a>#responsive</a>
+                                    <br>
+                                    <small>11:09 PM - 1 Jan 2016</small>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </nav>
+
+
+            <!-- <nav class="level">
                 <div class="level-item has-text-centered main-side">
                     <div class="card">
                         <div class="card-image">
@@ -182,7 +394,7 @@
                     </div>
                 </div>
     
-            </nav>
+            </nav> -->
     
         </div>
     
@@ -221,8 +433,26 @@ export default {
 }
 
 .box2 {
-    width: 80%
-}
 
+    max-width: 80%;
+}
+.level {
+max-width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+}
+.level-item {
+  padding: 5px;
+  color: white;
+  text-align: center;
+}
 
 </style>
