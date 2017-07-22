@@ -28,6 +28,7 @@ module.exports = {
         { src: 'font-awesome/css/font-awesome.css' },
         { src: '~assets/css/main.css' }
     ],
+    plugins: ['~plugins/filters.js'],
     /*
      ** Add axios globally
      */

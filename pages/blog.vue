@@ -1,13 +1,12 @@
 <template>
   <div class="column">
-  
+
     <firstRow></firstRow>
     <!-- first-row -->
-  
-    <secondRow></secondRow>
-    <!-- second-row -->
-  
-    <thirdRow></thirdRow>
+  <!---->
+    <!--<secondRow v-for="blog in blogs" :key="blog.id"></secondRow>-->
+    <!--&lt;!&ndash; second-row &ndash;&gt;-->
+    <!--<thirdRow v-for="blog in blogs" :key="blog.id"></thirdRow>-->
     <!-- third-row -->
   
   </div>
@@ -17,10 +16,12 @@
   import firstRow from '~components/blogComp/blogFirstRow.vue'
   import secondRow from '~components/blogComp/blogSecondRow.vue'
   import thirdRow from '~components/blogComp/blogThirdRow.vue'
+
   export default {
     components: {firstRow, secondRow, thirdRow}
   }
 </script>
+
 
 <style>
  p, .title {
