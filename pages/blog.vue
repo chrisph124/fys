@@ -17,7 +17,7 @@ export default {
   components: { leftCol, rightCol, detailCol },
   data () {
     return {
-      isShow: true
+      isShow: false
     }
   }
 

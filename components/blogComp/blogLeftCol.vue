@@ -27,15 +27,15 @@
                     <article class="media" v-for="data in datas" :key="data.id">
                         <div class="media-left">
                             <figure class="image is-64x64">
-                                <img src="http://bulma.io/images/placeholders/64x64.png" alt="Image">
+                                <img :src="data.img" :alt="data.title">
                             </figure>
                         </div>
                         <div class="media-content">
                             <div class="content is-marginless is-paddingless">
                                 <h6 class="title is-6">
-                                    <a href="#">{{data}} Sed neque offi unde repudiandae.</a>
+                                    <a href="#">{{data.title}}</a>
                                 </h6>
-                                <small>01/01/2017</small>
+                                <small>{{data.date}}</small>
                             </div>
     
                         </div>
@@ -49,7 +49,13 @@
 export default {
   data () {
     return {
-      datas: [1, 2, 3, 4, 5, 6]
+      datas: [
+        { title: 'Principal Brand Architect', date: '2017-03-27', img: 'http://lorempixel.com/64/64/city/1' },
+        { title: 'Product Integration Coordinator', date: '2017-01-22', img: 'http://lorempixel.com/64/64/city/2' },
+        { title: 'Central Creative Producer', date: '2016-08-17', img: 'http://lorempixel.com/64/64/city/3' },
+        { title: 'Central Branding Supervisor', date: '2017-04-03', img: 'http://lorempixel.com/64/64/city/4' },
+        { title: 'Internal Configuration Liaison', date: '2017-07-04', img: 'http://lorempixel.com/64/64/city/5' }
+      ]
     }
   }
 }
