@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+# .idea folder
+.idea
+
 # dependencies
 node_modules
 
