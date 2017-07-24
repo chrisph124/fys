@@ -1,26 +1,23 @@
 <template>
   <div class='col-right'>
     <div class="box">
-      <article class="media" v-for="data in datas" :key="data.id">
+      <article class="media" v-for="blog in blogs" :key="blog.id">
         <div class="media-left">
           <figure class="image is-128x128">
-            <img :src="data.img" alt="Image">
+            <img :src="blog.img" alt="Image">
           </figure>
         </div>
         <div class="media-content">
           <div class="content is-paddingless">
-            <h6 class="subtitle" style="color: #00d1b2">{{data.category}}</h6>
+            <h6 class="subtitle" style="color: #00d1b2">{{blog.name}}</h6>
             <h3 class="title">
-              <a :href="data.title" @click="detailPost">{{data.title}}</a>
+              <a href="#">{{blog.title}}</a>
             </h3>
-            <small>{{data.date}}
-              <a href="#" style="color: #D32F2F">{{data.name}}</a>
+            <small>{{blog.date}}
+              <a href="#" style="color: #D32F2F">{{blog.first_name}} {{blog.last_name}}</a>
             </small>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas.
+              {{blog.content}}
             </p>
             <nav class="level is-mobile">
               <div class="level-left">
@@ -69,18 +66,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      datas: [
-        { category: 'dự án', title: 'Central Usability Assistant', name: 'Queenie Moore', date: '2017-06-28', img: 'http://lorempixel.com/256/256/city/6' },
-        { category: 'nhà đất', title: 'Dynamic Markets Architect', name: 'Tony Robel', date: '2016-08-15', img: 'http://lorempixel.com/256/256/city/7' },
-        { category: 'mẹo vặt', title: 'Senior Paradigm Agent', name: 'Armand Pouros', date: '2016-12-23', img: 'http://lorempixel.com/256/256/city/8' },
-        { category: 'mẹo vặt', title: 'Product Optimization Designer', name: 'Eldridge Labadie', date: '2017-07-22', img: 'http://lorempixel.com/256/256/city/9' },
-        { category: 'dự án', title: 'Direct Assurance Director', name: 'Adelia Gulgowski', date: '2016-10-23', img: 'http://lorempixel.com/256/256/city/10' },
-        { category: 'nhà đất', title: 'Product Implementation Agent', name: 'Aron Hammes', date: '2017-05-01', img: 'http://lorempixel.com/256/256/city/1' }
-      ]
-    }
-  }
 }
 </script>
 
