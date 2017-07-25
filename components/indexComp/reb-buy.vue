@@ -454,5 +454,4 @@ max-width: 100%;
   color: white;
   text-align: center;
 }
-
 </style>
