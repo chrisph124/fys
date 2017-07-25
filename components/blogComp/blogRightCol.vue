@@ -3,9 +3,7 @@
     <div class="box">
       <article class="media" v-for="blog in blogs" :key="blog.id">
         <div class="media-left">
-          <figure class="image is-128x128">
-            <img :src="blog.img" alt="Image">
-          </figure>
+            <img :src="blog.url" alt="Image" class="image is-128x128">
         </div>
         <div class="media-content">
           <div class="content is-paddingless">
@@ -13,12 +11,13 @@
             <h3 class="title">
               <a href="#">{{blog.title}}</a>
             </h3>
-            <small>{{blog.date}}
+            <small>{{blog.create_at}}
               <a href="#" style="color: #D32F2F">{{blog.first_name}} {{blog.last_name}}</a>
             </small>
             <p>
-              {{blog.content}}
+              {{blog.content | truncate(700)}}
             </p>
+            <a href="#" class="is-pulled-right">Xem thêm</a>
             <nav class="level is-mobile">
               <div class="level-left">
                 <a class="level-item">
@@ -66,12 +65,16 @@
 
 <script>
 export default {
-  props: ['blogs']
+  props: ['blogs'],
+  filters: {
+    truncate (string, value) {
+      return string.substring(0, value) + '...'
+    }
+  }
 }
 </script>
 
 <style scoped>
-
 .box {
   border-radius: 0;
   box-shadow: none;
@@ -119,5 +122,4 @@ h3.title {
 .pagination {
   margin-top: 2rem
 }
-
 </style>

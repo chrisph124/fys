@@ -127,6 +127,13 @@
     </div>
 </template>
 
+<script>
+export default {
+  props: ['blogs']
+}
+</script>
+
+
 
 <style scoped>
 .fa {
