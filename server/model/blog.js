@@ -1,6 +1,7 @@
 /**
  * Created by msi on 18/07/2017.
  */
+//todo: selectBlog by ID
 'use strict'
 
 const Model = require('./model')

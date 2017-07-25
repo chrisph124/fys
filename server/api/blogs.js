@@ -13,7 +13,7 @@ router.get('/blogs', (req, res, next) => {
     blog.selectBlog()
         .then(data => {
             res.json(data)
-            console.log(data)
+            //console.log(data)
         })
 
 })
