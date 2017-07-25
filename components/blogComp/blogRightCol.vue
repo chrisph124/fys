@@ -65,12 +65,7 @@
 
 <script>
 export default {
-  props: ['blogs'],
-  filters: {
-    truncate (string, value) {
-      return string.substring(0, value) + '...'
-    }
-  }
+  props: ['blogs']
 }
 </script>
 

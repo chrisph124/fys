@@ -24,8 +24,7 @@ export default {
   },
   data () {
     return {
-      isShow: false,
-      text1: 'Voluptate quam quasi vitae aut vitae. Mollitia possimus velit consectetur voluptates quo quam modi qui qui. Ab doloremque nobis ipsa quidem totam consequatur ea consequatur autem. Aliquid quis sunt voluptatem quidem eum nisi et voluptatem iure. Rerum distinctio sint error explicabo doloremque.'
+      isShow: false
     }
   }
 
