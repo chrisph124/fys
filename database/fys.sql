@@ -17118,13 +17118,13 @@ create table blog_category (
 	count INT
 );
 
-insert into blog_category (id, name, count) values (1, 'Nhà đất', 10);
-insert into blog_category (id, name, count) values (2, 'Dự án mới', 20);
-insert into blog_category (id, name, count) values (3, 'Mẹo vặt', 30);
+insert into blog_category (blog_cate_id, name, count) values (1, 'Nhà đất', 10);
+insert into blog_category (blog_cate_id, name, count) values (2, 'Dự án mới', 20);
+insert into blog_category (blog_cate_id, name, count) values (3, 'Mẹo vặt', 30);
 
 create table blog (
 	blog_id INT PRIMARY KEY,
-	title VARCHAR(50),
+	title VARCHAR(300),
 	content TEXT,
 	user_id INT,
 	create_at DATE,
@@ -17184,7 +17184,7 @@ insert into blog (blog_id, title, content, create_at, user_id, blog_cate_id) val
 
 
 create table blog_picture (
-	blog_pic INT PRIMARY KEY,
+	blog_pic_id INT PRIMARY KEY,
 	url VARCHAR(50),
 	blog_id INT
 );

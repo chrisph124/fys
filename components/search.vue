@@ -21,10 +21,11 @@
 
 <style scoped>
 @media screen and (min-width: 999px) and (max-width: 1239px) {
-  .input {
-      width: 50%
-  }
+    .input {
+        width: 50%
+    }
 }
+
 .column {
     margin: 50px 100px;
     padding: 0;

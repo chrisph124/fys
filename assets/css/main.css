@@ -5,3 +5,49 @@ body {
 p {
     text-align: justify;
 }
+
+p,
+.title {
+    color: black
+}
+
+.subtitle a {
+    color: #00ffff
+}
+
+.gold {
+    background-color: #b76e79;
+}
+
+.blue {
+    background-color: #308014
+}
+
+.red {
+    background-color: #DC143C
+}
+
+li {
+    list-style-type: none
+}
+
+a {
+    color: black
+}
+
+a:hover {
+    color: #00d1b2
+}
+
+.col-right {
+    width: 75%;
+    padding: 1rem;
+    padding-left: 0;
+    margin-right: 3rem
+}
+
+.col-left {
+    width: 25%;
+    padding: 1rem;
+    margin: 0 3rem
+}

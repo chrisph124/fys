@@ -1,7 +1,7 @@
 <template>
   <div>
     <my-nav/>
-    <nuxt/>
+    <nuxt id="nuxt"/>
     <my-footer/>
   </div>
 </template>
@@ -24,6 +24,10 @@ export default {
   width: 100%;
   padding: 100px 0;
   text-align: center;
+}
+
+#nuxt {
+  margin: 2rem 0
 }
 
 

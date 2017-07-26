@@ -1,51 +1,26 @@
 <template>
-  <div class="column">
-
-    <firstRow></firstRow>
-    <!-- first-row -->
-  <!---->
-    <!--<secondRow v-for="blog in blogs" :key="blog.id"></secondRow>-->
-    <!--&lt;!&ndash; second-row &ndash;&gt;-->
-    <!--<thirdRow v-for="blog in blogs" :key="blog.id"></thirdRow>-->
-    <!-- third-row -->
-  
-  </div>
+    <div>
+        <div class="columns is-marginless">
+            <left-col/>
+            <right-col v-show="isShow" :blogs="blogs"/>
+            <detail-col v-show="!isShow"/>
+        </div>
+    </div>
 </template>
 
-<script>
-  import firstRow from '~components/blogComp/blogFirstRow.vue'
-  import secondRow from '~components/blogComp/blogSecondRow.vue'
-  import thirdRow from '~components/blogComp/blogThirdRow.vue'
 
+<script>
+  import axios from '~plugins/axios'
+  import leftCol from '~components/blogComp/blogLeftCol.vue'
+  import rightCol from '~components/blogComp/blogRightCol.vue'
+  import detailCol from '~components/blogComp/blogDetail.vue'
   export default {
-    components: {firstRow, secondRow, thirdRow}
+    components: {leftCol, rightCol, detailCol},
+    async asyncData () {
+      let {data} = await axios.get ('/api/blogs/index')
+      return {
+        blogs: data
+      }
+    }
   }
 </script>
-
-
-<style>
- p, .title {
-  color: white
-} 
-.is-ancestor {
-  max-height: 10rem;
-  padding: 0 2.5rem
-}
-
- .subtitle a{
-  color: #00ffff
-}
-
- .gold {
-  background-color: #b76e79;
-}
-
-.blue {
-  background-color: #308014
-}
-
-.red {
- background-color: #DC143C
-}  
-
-</style>
