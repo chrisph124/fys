@@ -7,7 +7,7 @@
         <real-estate/>
         </div>
         <div class="is-down">
-        <info-blog :blogs="blogs" />
+        <info-blog :getND="dataND" :getDA="dataDA" :getMV="dataMV"  />
         </div>
     </div>
 </template>
@@ -20,9 +20,13 @@ import infoBlog from '~components/indexComp/info-block.vue'
 export default {
   components: { infoIcon, realEstate, infoBlog },
   async asyncData () {
-    let {data} = await axios.get('/api/blogs')
+    let {data1} = await axios.get('/api/blogfornd')
+    let {data2} = await axios.get('/api/blogforda')
+    let {data3} = await axios.get('/api/blogformv')
     return {
-      blogs: data
+      dataND: data1,
+      dataDA: data2,
+      dataMV: data3
     }
   }
 }

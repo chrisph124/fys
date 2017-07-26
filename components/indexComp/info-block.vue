@@ -10,41 +10,47 @@
       <div class="tile is-vertical">
         <div class="tile">
           <div class="tile is-parent">
-            <article class="tile is-child">
+            <article class="tile is-child" v-for="(data, index) in blogsInfo1" :key="data.id">
               <figure class="image is-3by2">
                 <img src="http://bulma.io/images/placeholders/480x320.png">
               </figure>
-              <p class="title is-4" style="width: 100%"><a href="#">Global Research Strategist</a></p>
-              <span>2017-07-25</span>
-              <p>Asperiores perferendis eius incidunt dolorem nihil ipsam nihil consequatur. Earum quo minima. Iure ut atque. Voluptates eligendi enim aperiam nihil ipsam rem molestias explicabo et.</p>
+              <p class="title is-4" style="width: 100%">
+                <a href="#">{{data.title}}</a>
+              </p>
+              <span>{{data.create_at | moment("DD/MM/YYYY")}}</span>
+              <p>{{data.content | truncate(200) }}</p>
             </article>
           </div>
-
-          <div class="tile is-parent is-vertical is-marginless" v-for="data in blogs1" :key="data.id">
-            <article class="tile is-child nofication is-primary">
+  
+          <div class="tile is-parent is-vertical is-marginless">
+            <article class="tile is-child nofication is-primary" v-for="data in blogsInfo2" :key="data.id">
               <figure class="image is-128x128 is-pulled-left">
                 <img src="http://bulma.io/images/placeholders/128x128.png">
               </figure>
-              <p class="title is-5">{{data.title}}t</p>
+              <p class="title is-5" style="width: 100%">
+                <a href="#">{{data.title}}</a>
+              </p>
+              <span>{{data.create_at | moment("DD/MM/YYYY")}}</span>
             </article>
           </div>
-          
-        </div>
+  
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ['blogs'],
+  props: ['getND', 'getDA', 'getMV'],
   data () {
     return {
       btn: 'button',
       isBlackND: true,
       isBlackDA: false,
       isBlackMV: false,
-      blogs1: this.blogs
+      blogsInfo1: this.getND.slice(0, 1),
+      blogsInfo2: this.getND.slice(1)
     }
   },
   methods: {

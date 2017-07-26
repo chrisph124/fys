@@ -19,11 +19,12 @@
     "express": "^4.15.3",
     "font-awesome": "^4.7.0",
     "nuxt": "^1.0.0-alpha.3",
-    "source-map-support": "^0.4.15",
-    "vue-carousel": "^0.6.5",
     "pg-monitor": "^0.8.2",
     "pg-promise": "^6.3.5",
-    "vue-flickity": "^1.0.8"
+    "source-map-support": "^0.4.15",
+    "vue-carousel": "^0.6.5",
+    "vue-flickity": "^1.0.8",
+    "vue-moment": "^2.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

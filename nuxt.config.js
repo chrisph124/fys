@@ -14,9 +14,6 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans' }
-    ],
-    script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js' }
     ]
   },
     /*
@@ -27,7 +24,7 @@ module.exports = {
     { src: 'font-awesome/css/font-awesome.css' },
     { src: '~assets/css/main.css' }
   ],
-  plugins: ['~plugins/filters.js'],
+  plugins: ['~plugins/filters.js', '~plugins/moment.js'],
     /*
      ** Add axios globally
      */
