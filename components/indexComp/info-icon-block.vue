@@ -1,5 +1,5 @@
 <template>
-  <div class="columns is-marginless is-hidden-mobile is-hidden-tablet-only">
+  <div class="columns is-marginless is-hidden-mobile is-hidden-tablet-only grey">
     
         <div class="column">
             <div class="box">
@@ -166,10 +166,6 @@
     .media-content:not(.is-desktop)  {
         font-size: 0.9em
     }
-}
-
-.columns {
-    background-color: #EEE;
 }
 
 .media-content {

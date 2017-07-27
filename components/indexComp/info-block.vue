@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="grey">
     <h3 class="title is-3 has-text-centered">Thông tin trị trường</h3>
     <div class="block has-text-centered">
       <a :class="{ button: 'button', 'is-black': isBlackND, btn: 'btn' }" @click="changeNDLabel">Nhà đất</a>
@@ -8,14 +8,14 @@
     </div>
     <div class="tile is-ancestor is-8">
       <div class="tile is-vertical">
-        <div class="tile">
+        <div class="tile is-down">
           <div class="tile is-parent">
             <article class="tile is-child" v-for="(data, index) in blogsInfo1" :key="data.id">
               <figure class="image is-3by2">
                 <img src="http://bulma.io/images/placeholders/480x320.png">
               </figure>
               <p class="title is-4" style="width: 100%">
-                <a href="#">{{data.title}}</a>
+                <a :href="data.title">{{data.title}}</a>
               </p>
               <span>{{data.create_at | moment("DD/MM/YYYY")}}</span>
               <p>{{data.content | truncate(200) }}</p>
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="block has-text-centered">
-        <button class="button is-black btn">Xem tất cả</button>
+        <button class="button is-black btn"><a href="/blog" style="color: white">Xem tất cả</a></button>
       </div>
       </div>      
     </div>
@@ -90,7 +90,6 @@ export default {
   border-bottom: 1px solid black
 }
 
-
 .btn {
   border-radius: 0;
   border-color: black;
@@ -119,4 +118,5 @@ export default {
 figure.is-pulled-left {
   margin-right: 0.5rem
 }
+
 </style>
