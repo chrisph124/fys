@@ -2,9 +2,9 @@
   <div>
     <h3 class="title is-3 has-text-centered">Thông tin trị trường</h3>
     <div class="block has-text-centered">
-      <a :class="{button: btn, 'is-black': isBlackND}" @click="changeNDLabel">Nhà đất</a>
-      <a :class="{button: btn, 'is-black': isBlackDA}" @click="changeDALabel">Dự án</a>
-      <a :class="{button: btn, 'is-black': isBlackMV}" @click="changeMVLabel">Mẹo vặt</a>
+      <a :class="{ button: 'button', 'is-black': isBlackND, btn: 'btn' }" @click="changeNDLabel">Nhà đất</a>
+      <a :class="{ button: 'button', 'is-black': isBlackDA, btn: 'btn' }" @click="changeDALabel">Dự án</a>
+      <a :class="{ button: 'button', 'is-black': isBlackMV, btn: 'btn' }" @click="changeMVLabel">Mẹo vặt</a>
     </div>
     <div class="tile is-ancestor is-8">
       <div class="tile is-vertical">
@@ -23,7 +23,7 @@
           </div>
   
           <div class="tile is-parent is-vertical is-marginless">
-            <article class="tile is-child nofication is-primary" v-for="data in blogsInfo2" :key="data.id">
+            <article class="tile is-child nofication is-primary" v-for="(data, index) in blogsInfo2" :key="data.id">
               <figure class="image is-128x128 is-pulled-left">
                 <img src="http://bulma.io/images/placeholders/128x128.png">
               </figure>
@@ -33,9 +33,11 @@
               <span>{{data.create_at | moment("DD/MM/YYYY")}}</span>
             </article>
           </div>
-  
         </div>
+        <div class="block has-text-centered">
+        <button class="button is-black btn">Xem tất cả</button>
       </div>
+      </div>      
     </div>
   </div>
 </template>
@@ -45,7 +47,6 @@ export default {
   props: ['getND', 'getDA', 'getMV'],
   data () {
     return {
-      btn: 'button',
       isBlackND: true,
       isBlackDA: false,
       isBlackMV: false,
@@ -58,16 +59,22 @@ export default {
       this.isBlackND = true
       this.isBlackDA = false
       this.isBlackMV = false
+      this.blogsInfo1 = this.getND.slice(0, 1)
+      this.blogsInfo2 = this.getND.slice(1)
     },
     changeDALabel () {
       this.isBlackND = false
       this.isBlackDA = true
       this.isBlackMV = false
+      this.blogsInfo1 = this.getDA.slice(0, 1)
+      this.blogsInfo2 = this.getDA.slice(1)
     },
     changeMVLabel () {
       this.isBlackND = false
       this.isBlackDA = false
       this.isBlackMV = true
+      this.blogsInfo1 = this.getMV.slice(0, 1)
+      this.blogsInfo2 = this.getMV.slice(1)
     }
   }
 }
@@ -84,19 +91,20 @@ export default {
 }
 
 
-.button {
+.btn {
   border-radius: 0;
   border-color: black;
   border-top: none;
   padding: 1.2rem 2.5rem;
-  margin-bottom: 3rem
+  margin-bottom: 3rem;
+  line-height: 0
 }
 
-.button:first-child {
+.btn:first-child {
   border-right: none
 }
 
-.button:last-child {
+.btn:last-child {
   border-left: none
 }
 

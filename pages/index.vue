@@ -20,13 +20,13 @@ import infoBlog from '~components/indexComp/info-block.vue'
 export default {
   components: { infoIcon, realEstate, infoBlog },
   async asyncData () {
-    let {data1} = await axios.get('/api/blogfornd')
-    let {data2} = await axios.get('/api/blogforda')
-    let {data3} = await axios.get('/api/blogformv')
+    let data1 = await axios.get('/api/blogfornd')
+    let data2 = await axios.get('/api/blogforda')
+    let data3 = await axios.get('/api/blogformv')
     return {
-      dataND: data1,
-      dataDA: data2,
-      dataMV: data3
+      dataND: data1.data,
+      dataDA: data2.data,
+      dataMV: data3.data
     }
   }
 }
