@@ -27,6 +27,10 @@ p,
     background-color: #DC143C
 }
 
+.red-color {
+    color: #DC143C
+}
+
 .grey {
     background-color: #EEE;
 }
@@ -57,5 +61,5 @@ a:hover {
 }
 
 .is-down {
-    margin-bottom: 5rem
+    padding: 2.5rem 0;
 }
