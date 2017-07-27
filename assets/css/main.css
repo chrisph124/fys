@@ -27,6 +27,10 @@ p,
     background-color: #DC143C
 }
 
+.grey {
+    background-color: #EEE;
+}
+
 li {
     list-style-type: none
 }
