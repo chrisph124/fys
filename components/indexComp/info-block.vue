@@ -1,5 +1,5 @@
 <template>
-  <div class="grey">
+  <div>
     <h3 class="title is-3 has-text-centered">Thông tin trị trường</h3>
     <div class="block has-text-centered">
       <a :class="{ button: 'button', 'is-black': isBlackND, btn: 'btn' }" @click="changeNDLabel">Nhà đất</a>
@@ -14,11 +14,15 @@
               <figure class="image is-3by2">
                 <img src="http://bulma.io/images/placeholders/480x320.png">
               </figure>
-              <p class="title is-4" style="width: 100%">
+              <p class="title is-5" style="width: 100%">
                 <a :href="data.title">{{data.title}}</a>
               </p>
-              <span>{{data.create_at | moment("DD/MM/YYYY")}}</span>
-              <p>{{data.content | truncate(200) }}</p>
+              <span>
+                <small>{{data.create_at | moment("DD/MM/YYYY")}}</small>
+              </span>
+              <p>
+                <small>{{data.content | truncate(150) }}</small>
+              </p>
             </article>
           </div>
   
@@ -27,17 +31,21 @@
               <figure class="image is-128x128 is-pulled-left">
                 <img src="http://bulma.io/images/placeholders/128x128.png">
               </figure>
-              <p class="title is-5" style="width: 100%">
+              <p class="title is-6" style="width: 100%">
                 <a href="#">{{data.title}}</a>
               </p>
-              <span>{{data.create_at | moment("DD/MM/YYYY")}}</span>
+              <span>
+                <small>{{data.create_at | moment("DD/MM/YYYY")}}</small>
+              </span>
             </article>
           </div>
         </div>
         <div class="block has-text-centered">
-        <button class="button is-black btn"><a href="/blog" style="color: white">Xem tất cả</a></button>
+          <button class="button is-black btn">
+            <a href="/blog" style="color: white">Xem tất cả</a>
+          </button>
+        </div>
       </div>
-      </div>      
     </div>
   </div>
 </template>
@@ -118,5 +126,4 @@ export default {
 figure.is-pulled-left {
   margin-right: 0.5rem
 }
-
 </style>

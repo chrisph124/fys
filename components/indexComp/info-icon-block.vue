@@ -1,5 +1,5 @@
 <template>
-  <div class="columns is-marginless is-hidden-mobile is-hidden-tablet-only grey">
+  <div class="columns is-marginless is-hidden-mobile is-hidden-tablet-only">
     
         <div class="column">
             <div class="box">
