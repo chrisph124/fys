@@ -1,7 +1,4 @@
 <<<<<<< HEAD
-# config.json
-config
-
 # .idea folder
 .idea
 
@@ -83,3 +80,5 @@ typings/
 .env
 
 >>>>>>> b8c0055445c7a5384548f3ca73bc4fdbd01ff590
+
+/server/config/config.json
