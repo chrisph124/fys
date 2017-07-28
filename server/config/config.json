@@ -2,7 +2,7 @@
     "development": {
         "username": "phpt",
         "password": "ht9195",
-        "database": "fys",
+        "database": "dump_fys",
         "host": "localhost",
         "port": 5432,
         "dialect": "postgres",
