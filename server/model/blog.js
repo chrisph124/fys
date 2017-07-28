@@ -81,6 +81,19 @@ class Blog extends Model {
     ORDER BY RANDOM()
     LIMIT 4`)
   }
+
+
+  detailBlog (id) {
+    return this.db.oneOrNone(`
+    SELECT blog.blog_id, title, content, create_at, name as cate_name, last_name, first_name, url
+    FROM blog, fys_user, blog_category, blog_picture
+    WHERE blog.blog_cate_id = blog_category.blog_cate_id 
+    AND fys_user.user_id = blog.user_id 
+    AND blog.blog_id = blog_picture.blog_id
+    AND blog.blog_id = $1
+    LIMIT 1`, id);
+  }
+
 }
 
 module.exports = Blog

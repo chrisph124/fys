@@ -15,27 +15,31 @@
         </nav>
         <div class="content">
             <div class="has-text-centered">
-                <h1>Hello World</h1>
+                <h1>details.title
+
+                </h1>
                 <span>
                     <small>
                     <i class="fa fa-calendar"></i>
-                    01/01/2017
+                     details.created_at | moment("DD/MM/YYYY")
                 </small>
                 </span>
                 <span>
                     <i class="fa fa-tags"></i>
-                    <a href="#">Category</a>
+                    <a href="#">details.cate_name</a>
                 </span>
                 <span>
                     <i class="fa fa-user-o"></i>
-                    <a href="#">Author</a>
+                    <a href="#">details.first_name details.last_name</a>
                 </span>
                 <span>
                     <a href="#"><i class="fa fa-facebook"></i></a>
                     <a href="#"><i class="fa fa-send"></i></a>
                 </span>
             </div>
-            <h2>Second level</h2>
+            details.url
+            details.content
+            <!--<h2>Second level</h2>
             <p>Curabitur accumsan turpis pharetra
                 <strong>augue tincidunt</strong> blandit. Quisque condimentum maximus mi, sit amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis. Suspendisse potenti. Etiam mattis sem rhoncus lacus dapibus facilisis. Donec at dignissim dui. Ut et neque nisl.</p>
             <ul>
@@ -122,26 +126,25 @@
                 </figcaption>
             </figure>
             <h6>Sixth level</h6>
-            <p>Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim vitae, malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit vel rutrum commodo, ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.</p>
+            <p>Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim vitae, malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit vel rutrum commodo, ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.</p>-->
         </div>
     </div>
 </template>
 
 <script>
-export default {
-  props: ['blogs']
-}
+  export default {
+    props: ['details']
+  }
 </script>
 
 
-
 <style scoped>
-.fa {
-    display: inline;
-    margin-right: 0.3rem
-}
+    .fa {
+        display: inline;
+        margin-right: 0.3rem
+    }
 
-span, span a {
-    margin-right: 0.5rem
-}
+    span, span a {
+        margin-right: 0.5rem
+    }
 </style>

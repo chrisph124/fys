@@ -1,45 +1,54 @@
 const webpack = require('webpack')
 
 module.exports = {
-    /*
-     ** Headers of the page
-     */
+  /*
+   ** Headers of the page
+   */
   head: {
     title: 'Find Your Stay',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: 'Nuxt.js project'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans' }
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans'}
     ]
   },
-    /*
-     ** Global CSS
-     */
+  /*
+   ** Global CSS
+   */
   css: [
-    { src: 'bulma/css/bulma.css' },
-    { src: 'font-awesome/css/font-awesome.css' },
-    { src: '~assets/css/main.css' }
+    {src: 'bulma/css/bulma.css'},
+    {src: 'font-awesome/css/font-awesome.css'},
+    {src: '~assets/css/main.css'}
   ],
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'blog_id',
+        path: '/blog/:id',
+        component: resolve(__dirname, 'pages/_id.vue')
+      })
+    }
+  },
   plugins: ['~plugins/filters.js', '~plugins/moment.js'],
-    /*
-     ** Add axios globally
-     */
+  /*
+   ** Add axios globally
+   */
   build: {
     vendor: ['axios'],
     plugins: [
       new webpack.ProvidePlugin({
         '$': 'jquery',
         '_': 'lodash'
-                    // ...etc.
+        // ...etc.
       })
     ],
-        /*
-         ** Run ESLINT on save
-         */
+    /*
+     ** Run ESLINT on save
+     */
     extend (config, ctx) {
       if (ctx.isClient) {
         config.module.rules.push({

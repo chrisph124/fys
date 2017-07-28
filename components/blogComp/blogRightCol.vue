@@ -9,9 +9,11 @@
           <div class="content is-paddingless">
             <h6 class="subtitle" style="color: #00d1b2">{{blog.name}}</h6>
             <h3 class="title">
-              <a href="#">{{blog.title}}</a>
+              <router-link :to="'/blog/' + blog.blog_id">{{blog.title}}</router-link>
+              <!--<router-link :to="{name: 'blog_id', params:{id: blog.blog_id}}">{{blog.title}}</router-link>
+              -->
             </h3>
-            <small>{{blog.create_at}}
+            <small>{{blog.create_at | moment("DD/MM/YYYY")}}
               <a href="#" style="color: #D32F2F">{{blog.first_name}} {{blog.last_name}}</a>
             </small>
             <p>
@@ -33,10 +35,10 @@
               </div>
             </nav>
           </div>
-  
+
         </div>
       </article>
-  
+
       <nav class="pagination is-centered">
         <a class="pagination-previous">Previous 5 pages</a>
         <a class="pagination-next">Next 5 pages</a>
@@ -58,7 +60,7 @@
           </li>
         </ul>
       </nav>
-  
+
     </div>
   </div>
 </template>
