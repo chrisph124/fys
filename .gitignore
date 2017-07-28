@@ -19,6 +19,9 @@ dist
 
 # Backpack build
 build
+
+#config.json
+server/config/config.json
 =======
 # Logs
 logs
@@ -81,4 +84,4 @@ typings/
 
 >>>>>>> b8c0055445c7a5384548f3ca73bc4fdbd01ff590
 
-/server/config/config.json
+
