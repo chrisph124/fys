@@ -6,8 +6,8 @@
       <a :class="{ button: 'button', 'is-black': isBlackDA, btn: 'btn' }" @click="changeDALabel">Dự án</a>
       <a :class="{ button: 'button', 'is-black': isBlackMV, btn: 'btn' }" @click="changeMVLabel">Mẹo vặt</a>
     </div>
-    <div class="tile is-ancestor is-8">
-      <div class="tile is-vertical">
+    <div class='tile is-ancestor is-8'>
+        <div class="tile is-vertical">
         <div class="tile is-down">
           <div class="tile is-parent">
             <article class="tile is-child" v-for="(data, index) in blogsInfo1" :key="data.id">
@@ -116,7 +116,7 @@ export default {
 }
 
 .is-ancestor {
-  margin: auto
+  margin: auto;
 }
 
 .title:not(:last-child) {

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container">
   
     <div class="box1">
       <div class="level-item is-pulled-right">
@@ -9,35 +9,30 @@
       </div>
     </div>
   
-    <div class="box2">
-      <nav class="level">
-        <div class="level-item has-text-centered" v-for="(item, index) in items" :key="item.index">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-1by1">
-                <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
-              </figure>
-              <div class="card-content">
-  
-                <div class="content">
-                  <a>@bulmaio</a>.
-                  <a>{{item}}</a>
-                  <a>#responsive</a>
-                  <br>
-                  <small>11:09 PM - 1 Jan 2016</small>
+    <media :query="{maxWidth: 1920}">
+      <div class="box2">
+        <nav class="level">
+          <div class="level-item has-text-centered" v-for="(item, index) in items" :key="item.index">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-1by1">
+                  <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
+                </figure>
+                <div class="card-content">
+                  <div class="content">
+                    <a>@bulmaio</a>.
+                    <a>{{item}}</a>
+                    <a>#responsive</a>
+                    <br>
+                    <small>11:09 PM - 1 Jan 2016</small>
+                  </div>
                 </div>
               </div>
             </div>
-  
           </div>
-        </div>
-      </nav>
-        <div class="block has-text-centered">
-      <button class="button is-black btn">
-        <a href="/blog" style="color: white">Xem tất cả</a>
-      </button>
-    </div>
-    </div>
+        </nav>
+      </div>
+    </media>
   
     <div class="box3">
       <div class="level-item is-pulled-left">
@@ -46,15 +41,17 @@
         </a>
       </div>
     </div>
-
+  
   </div>
 </template>
 
 <script>
+import Media from 'vue-media'
 export default {
+  components: { Media },
   data () {
     return {
-      items: ['#1', '#2', '#3', '#4', '#5', '#6', '#7', '#8', '#9', '#10']
+      items: ['#1', '#2', '#3', '#4', '#5', '#6', '#7', '#8']
     }
   }
 }
@@ -62,38 +59,61 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid {
-  display: flex
+.container {
+  display: flex;
+  margin: auto;
+  padding: 0;
 }
 
 
 .box1,
 .box3 {
-  width: 10%;
+  max-width: 10%;
   align-self: center;
 }
 
 .box1 .button,
 .box3 .button {
-  height: 200px
+  height: 200px;
+}
+
+.is-primary {
+  background-color: transparent;
+  color: #EEE;
+  opacity: 0.75;
+  -webkit-transition: background-color 0.3s ease-out;
+  -moz-transition: background-color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+}
+
+.is-primary:hover {
+  background-color: #00d1b2;
+  color:#FFF;
+  opacity: 0.5;
+  transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
 }
 
 .box2 {
-
-  max-width: 80%;
+  max-width: 100%;
 }
 
 .level {
-  max-width: 100%;
   list-style: none;
-  display: flex;
   flex-flow: row wrap;
 }
 
 .level-item {
-  padding: 5px;
+  padding: 5px 5px 5px 0;
   color: white;
   text-align: center;
+}
+
+.level-item:last-child {
+  padding-right: none
 }
 
 .btn {
@@ -104,5 +124,4 @@ export default {
   margin-bottom: 3rem;
   line-height: 0
 }
-
 </style>
