@@ -14,7 +14,7 @@ class Blog extends Model {
 
   selectBlog () {
     return this.db.any(`
-    SELECT
+    SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
     FROM
     blog, fys_user, blog_category, blog_picture
@@ -24,13 +24,13 @@ class Blog extends Model {
     blog.blog_cate_id = blog_category.blog_cate_id
     AND
     blog_picture.blog_id = blog.blog_id
-    ORDER BY RANDOM()
-    LIMIT 15`)
+    ORDER BY blog.blog_id DESC
+    LIMIT 15 `)
   }
 
   selectBlogForND () {
     return this.db.any(`
-    SELECT
+    SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
     FROM
     blog, fys_user, blog_category, blog_picture
@@ -42,13 +42,13 @@ class Blog extends Model {
     blog_picture.blog_id = blog.blog_id
     AND
     name = 'Nhà đất'
-    ORDER BY RANDOM()
+    ORDER BY blog.blog_id DESC
     LIMIT 4`)
   }
 
   selectBlogForDA () {
     return this.db.any(`
-    SELECT
+    SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
     FROM
     blog, fys_user, blog_category, blog_picture
@@ -60,13 +60,13 @@ class Blog extends Model {
     blog_picture.blog_id = blog.blog_id
     AND
     name = 'Dự án mới'
-    ORDER BY RANDOM()
+    ORDER BY blog.blog_id DESC
     LIMIT 4`)
   }
 
   selectBlogForMV () {
     return this.db.any(`
-    SELECT
+    SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
     FROM
     blog, fys_user, blog_category, blog_picture
@@ -78,7 +78,7 @@ class Blog extends Model {
     blog_picture.blog_id = blog.blog_id
     AND
     name = 'Mẹo vặt'
-    ORDER BY RANDOM()
+    ORDER BY blog.blog_id DESC
     LIMIT 4`)
   }
 
