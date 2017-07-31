@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="title is-3 has-text-centered">Các khu vực Quận, huyện</h3>
-      <div class="column is-12">
+      <div class="column">
         <nav class="navbar">
         <a href="#" class="navbar-item" v-for="item in items" :key="item.id">{{item}}</a>
       </nav>

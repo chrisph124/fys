@@ -2,7 +2,7 @@
   <!-- <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image"> -->
   <div>
     <h3 class="title is-3 has-text-centered">Tìm căn hộ theo tòa nhà</h3>
-    <div class="column">
+    <!-- <div class="column">
       <div class="card" v-for="(item, index) in items" :key="item.index">
         <div class="card-image">
           <figure class="image is-3by2">
@@ -17,7 +17,21 @@
           </div>
         </div>
       </div>
+    </div> -->
+    <div class="block has-text-centered">
+      <a :class="{button: btn, 'is-black': isBlackBuy}" @click="changeRentLabel">Bán</a>
+      <a :class="{button: btn, 'is-black': isBlackRent}" @click="changeBuyLabel">Thuê</a>
     </div>
+
+
+      <ul class="column is-8 is-paddingless">
+        <li v-for="(building, index) in buildings" :key="building.index">
+          <span class="is-pulled-left"><a href="">{{building.name}}</a></span>
+          <small class="is-pulled-right">{{building.blocks}}</small>
+        </li>
+      </ul>
+
+
     <div class="block has-text-centered">
       <button class="button is-black">
         <a href="/blog" style="color: white">Xem tất cả</a>
@@ -34,7 +48,29 @@ export default {
       btn: 'button',
       isBlackBuy: true,
       isBlackRent: false,
-      items: ['#1', '#2', '#3', '#4', '#5', '#6']
+      items: ['#1', '#2', '#3', '#4', '#5', '#6'],
+      buildings: [
+        {name: 'Masteri Thảo Điền', blocks: '274 căn'},
+        {name: 'The Park Vinhomes Central Park', blocks: '81 căn'},
+        {name: 'The Landmark Vinhomes Central Park', blocks: '70 căn'},
+        {name: 'The Park Residence', blocks: '58 căn'},
+        {name: 'Tropic Garden', blocks: '25 căn'},
+        {name: 'Lexington Residence', blocks: '129 căn'},
+        {name: 'Sunrise City', blocks: '72 căn'},
+        {name: 'The Central Vinhomes Central Park', blocks: '67 căn'},
+        {name: 'The Parc Spring', blocks: '30 căn'},
+        {name: 'The Estella An Phú', blocks: '23 căn'}
+      ]
+    }
+  },
+  methods: {
+    changeRentLabel () {
+      this.isBlackBuy = true
+      this.isBlackRent = false
+    },
+    changeBuyLabel () {
+      this.isBlackBuy = false
+      this.isBlackRent = true
     }
   }
 }
@@ -48,6 +84,14 @@ export default {
   margin-bottom: 2.5rem;
   flex-flow: row wrap;
   justify-content: center
+}
+
+.title {
+  width: 30%;
+  padding: 1% 0;
+  margin: auto;
+  color: black;
+  border-bottom: 1px solid black
 }
 
 .card {
@@ -88,8 +132,14 @@ export default {
   height: 240px;
 }
 
-h3.title {
-  margin-bottom: 2.5rem
+
+li {
+  width: 40%;
+  margin: 0 3rem 1rem 3rem;
+}
+
+li span a {
+  color: black
 }
 
 .button {
