@@ -25,7 +25,8 @@
     "vue-carousel": "^0.6.5",
     "vue-flickity": "^1.0.8",
     "vue-media": "^1.1.0",
-    "vue-moment": "^2.0.2"
+    "vue-moment": "^2.0.2",
+    "vue2-google-maps": "^0.7.10"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
