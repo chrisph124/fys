@@ -18,7 +18,7 @@
         </div>
       </div>
     </div> -->
-    <div class="block has-text-centered">
+    <div class="has-text-centered">
       <a :class="{button: btn, 'is-black': isBlackBuy}" @click="changeRentLabel">Bán</a>
       <a :class="{button: btn, 'is-black': isBlackRent}" @click="changeBuyLabel">Thuê</a>
     </div>
@@ -93,6 +93,7 @@ export default {
   color: black;
   border-bottom: 1px solid black
 }
+
 
 .card {
   width: 320px;

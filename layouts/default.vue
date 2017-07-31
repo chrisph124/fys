@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import MyNav from '~components/Nav.vue'
 import MyFooter from '~components/Footer.vue'
+import MyNav from '~components/Nav.vue'
 
 export default {
   components: {
-    MyNav, MyFooter
+    MyFooter, MyNav
   }
 }
 </script>
@@ -27,7 +27,7 @@ export default {
 }
 
 #nuxt {
-  margin: 2rem 0
+  margin: 0 0 2.5rem 0
 }
 
 

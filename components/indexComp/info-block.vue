@@ -1,14 +1,16 @@
 <template>
   <div>
     <h3 class="title is-3 has-text-centered">Thông tin trị trường</h3>
-    <div class="block has-text-centered">
+    
+    <div class="has-text-centered">
       <a :class="{ button: 'button', 'is-black': isBlackND, btn: 'btn' }" @click="changeNDLabel">Nhà đất</a>
       <a :class="{ button: 'button', 'is-black': isBlackDA, btn: 'btn' }" @click="changeDALabel">Dự án</a>
       <a :class="{ button: 'button', 'is-black': isBlackMV, btn: 'btn' }" @click="changeMVLabel">Mẹo vặt</a>
     </div>
+
     <div class='tile is-ancestor is-8'>
         <div class="tile is-vertical">
-        <div class="tile is-down">
+        <div class="tile">
           <div class="tile is-parent">
             <article class="tile is-child" v-for="(data, index) in blogsInfo1" :key="data.id">
               <figure class="image is-3by2">
@@ -40,13 +42,14 @@
             </article>
           </div>
         </div>
-        <div class="block has-text-centered">
+        <div class="has-text-centered block">
           <button class="button is-black btn">
             <a href="/blog" style="color: white">Xem tất cả</a>
           </button>
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -103,7 +106,7 @@ export default {
   border-color: black;
   border-top: none;
   padding: 1.2rem 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   line-height: 0
 }
 
@@ -117,6 +120,7 @@ export default {
 
 .is-ancestor {
   margin: auto;
+  margin-bottom: 2.5rem
 }
 
 .title:not(:last-child) {

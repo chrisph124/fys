@@ -1,100 +1,66 @@
 <template>
   <div>
-    <gmap-map :center="center" :zoom="10" class="column is-12">
-      <gmap-marker :key="index" v-for="(m, index) in markers" :position="m.position" :clickable="true" :draggable="true" @click="center=m.position"></gmap-marker>
-    </gmap-map>
-    <nav class="navbar">
-      <div class="navbar-start">
-        <div class="navbar-item">
-          <button class="button">
-            <i class="fa fa-search"></i>
-          </button>
-          <input type="text" class="input" placeholder="Tìm kiếm">
+    <advanced-search/>
+    <div class="container-fluid">
+      <div class="column is-12">
+        <nav class="level">
+        <div class="level-item has-text-centered" v-for="item in 14">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
+              </figure>
+              <div class="card-content">
+                <div class="content">
+                  <a>@bulmaio</a>.
+                  <a>{{item}}</a>
+                  <a>#responsive</a>
+                  <br>
+                  <small>11:09 PM - 1 Jan 2016</small>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </nav>
       </div>
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Phòng ngủ</div>
-          <div class="navbar-dropdown">
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Phòng ngủ</div>
-          <div class="navbar-dropdown">
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Phòng ngủ</div>
-          <div class="navbar-dropdown">
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-          </div>
-        </div>
-      </div>
-    </nav>
+    </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import * as VueGoogleMaps from '~/node_modules/vue2-google-maps'
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: 'AIzaSyBvWE_sIwKbWkiuJQOf8gSk9qzpO96fhfY',
-    libraries: 'places' // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
-  }
-})
+import advancedSearch from '~components/search/advanced-search.vue'
+
 export default {
-  data () {
-    return {
-      center: { lat: 21.028511, lng: 105.804817 },
-      markers: [{
-        position: { lat: 21.028511, lng: 105.804817 }
-      }]
-    }
-  }
+  components: { advancedSearch }
 }
 </script>
 
 
 <style scoped>
-@media screen and (min-width: 1920px) {
-  .input {
-    width: 1000px
-  }
+
+.level {
+  display: flex;
+  list-style: none;
+  flex-flow: row wrap;
 }
 
-.column {
-  height: 400px
+.level-item {
+  padding: 5px 5px 5px 0;
+  color: white;
+  text-align: center;
 }
 
-.navbar-end {
-  padding: 0.5rem 1rem
+.image img {
+  width: 256px
 }
 
-.input {
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
-  padding-left: 0;
-  max-width: 100%;
-  width: 500px;
+.card {
+    flex-grow: 0;
+    align-self: stretch
 }
 
-
-.button {
-  border-radius: 0;
-  border: none;
-  color: #363636;
+.level-item:last-child {
+  padding-right: none
 }
 </style>

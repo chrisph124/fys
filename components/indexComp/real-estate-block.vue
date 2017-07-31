@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="title is-3 has-text-centered">Nhà đất nổi bật</h3>
-    <div class="block has-text-centered">
+    <div class="has-text-centered">
       <a :class="{button: btn, 'is-black': isBlackBuy}" @click="changeRentLabel">Bán</a>
       <a :class="{button: btn, 'is-black': isBlackRent}" @click="changeBuyLabel">Thuê</a>
     </div>
@@ -47,6 +47,6 @@ export default {
   border-color: black;
   border-top: none;
   padding: 1.2rem 2.5rem;
-  margin-bottom: 3rem
+  margin-bottom: 2.5rem
 }
 </style>

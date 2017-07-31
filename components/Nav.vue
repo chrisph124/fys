@@ -78,9 +78,8 @@
 
 <script>
 import myAccount from '~components/registerComp/my-account.vue'
-import search from '~components/search.vue'
 export default {
-  components: { myAccount, search },
+  components: { myAccount },
   data () {
     return {
       actived: false

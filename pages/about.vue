@@ -1,5 +1,7 @@
 <template>
-    <div class="column is-12">
+    <div>
+        <search/>
+        <div class="column is-12">
             <h3 class="title has-text-centered">
                 F.Y.S
             </h3>
@@ -12,7 +14,16 @@
             </p>
         </div>
     </div>
+    </div>
 </template>
+
+<script>
+import search from '~components/search/search.vue'
+export default {
+  components: {search}
+}
+</script>
+
 
 <style scoped>
 .column {

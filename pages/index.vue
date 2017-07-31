@@ -1,5 +1,7 @@
 <template>
-  <div class="contaier-fluid is-marginless">
+  <div>
+    <search/>
+    <div class="contaier-fluid is-marginless">
     <div class="grey">
       <info-icon/>
     </div>
@@ -19,10 +21,12 @@
       <why-us/>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
 import axios from '~plugins/axios'
+import search from '~components/search/search.vue'
 import infoIcon from '~components/indexComp/info-icon-block.vue'
 import realEstate from '~components/indexComp/real-estate-block.vue'
 import infoBlog from '~components/indexComp/info-block.vue'
@@ -30,7 +34,7 @@ import findByBuilding from '~components/indexComp/findByBuilding.vue'
 import findByDistrict from '~components/indexComp/findByDistrict.vue'
 import whyUs from '~components/indexComp/why-us.vue'
 export default {
-  components: { infoIcon, realEstate, infoBlog, findByBuilding, findByDistrict, whyUs },
+  components: { infoIcon, realEstate, infoBlog, findByBuilding, findByDistrict, whyUs, search },
   async asyncData () {
     let data1 = await axios.get('/api/blogfornd')
     let data2 = await axios.get('/api/blogforda')

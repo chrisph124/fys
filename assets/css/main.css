@@ -63,3 +63,7 @@ a:hover {
 .is-down {
     padding: 2.5rem 0;
 }
+
+.block {
+  margin-top: 2.5rem
+}

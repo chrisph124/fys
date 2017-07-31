@@ -77,28 +77,9 @@ export default {
   height: 200px;
 }
 
-.is-primary {
-  background-color: transparent;
-  color: #EEE;
-  opacity: 0.75;
-  -webkit-transition: background-color 0.3s ease-out;
-  -moz-transition: background-color 0.3s ease-out;
-  -o-transition: background-color 0.3s ease-out;
-  transition: background-color 0.3s ease-out;
-}
-
-.is-primary:hover {
-  background-color: #00d1b2;
-  color:#FFF;
-  opacity: 0.5;
-  transition: background-color 0.3s ease;
-  -webkit-transition: background-color 0.3s ease;
-  -moz-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
-}
-
 .box2 {
   max-width: 100%;
+  margin-bottom: 2.5rem
 }
 
 .level {
