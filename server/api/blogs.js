@@ -56,4 +56,18 @@ router.get('/blogs/:id', (req, res, next) => {
     })
 });
 
+router.get('/blogs/cate/:id', (req, res, next) => {
+  let id = req.params.id;
+  blog.selectBlogForCate(id)
+    .then(data => {
+      res.json(data);
+    })
+    .catch(error => {
+      res.json({
+        success: false,
+        error: error.message || error
+      });
+    })
+});
+
 export default router

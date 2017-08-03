@@ -7,13 +7,13 @@
                 <div class="content">
                     <ul class="is-marginless">
                         <li>
-                            <a href="#">Dự án</a>
+                            <a href="/blog/cate/2">Dự án</a>
                         </li>
                         <li>
-                            <a href="#">Nhà đất</a>
+                            <a href="/blog/cate/1">Nhà đất</a>
                         </li>
                         <li>
-                            <a href="#">Mẹo vặt</a>
+                            <a href="/blog/cate/3">Mẹo vặt</a>
                         </li>
                     </ul>
                 </div>
