@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <transition name="page" mode="out-in">
+    <div>
     <search/>
     <div class="columns is-marginless">
       <left-col/>
@@ -7,6 +8,7 @@
       <!--<detail-col v-show="isShow" :details="detailsData"/>-->
     </div>
   </div>
+  </transition>
 </template>
 
 

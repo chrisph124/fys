@@ -18,8 +18,7 @@ export default {
 </script>
 
 <style>
-.container
-{
+.container {
   margin: 0;
   width: 100%;
   padding: 100px 0;
@@ -29,6 +28,4 @@ export default {
 #nuxt {
   margin: 0 0 2.5rem 0
 }
-
-
 </style>

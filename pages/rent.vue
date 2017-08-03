@@ -14,11 +14,40 @@
                     </figure>
                     <div class="card-content">
                       <div class="content">
-                        <a>@bulmaio</a>.
-                        <a>{{item}}</a>
-                        <a>#responsive</a>
-                        <br>
-                        <small>11:09 PM - 1 Jan 2016</small>
+                        <div>
+                          <p>
+                            <a href="#">Product Data Producer</a>
+                          </p>
+                        </div>
+                        <div>
+                          <small>844 McGlynn Viaduct</small>
+                        </div>
+                        <div>
+                          <small>Pennsylvania</small>
+                        </div>
+                        <div>
+                          <nav class="navbar">
+                            <div class="navbar-start">
+                              <div class="navbar-item">
+                              <i class="fa fa-bed" aria-hidden="true"></i>
+                              2
+                            </div>
+                            <div class="navbar-item">
+                              <i class="fa fa-bath" aria-hidden="true"></i>
+                              2
+                            </div>
+                            <div class="navbar-item">
+                              <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                              100m&#178;
+                            </div>                            
+                            </div>
+                            <div class="navbar-end">
+                              <div class="navbar-item">
+                              2 tỷ
+                            </div>
+                            </div>
+                          </nav>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -75,13 +104,19 @@ export default {
 }
 
 .level-item {
-  margin: 1rem;
+  margin: 0.25rem;
   color: white;
   text-align: center;
 }
 
+.card-image {
+  width: 300px;
+}
+
 .image img {
-  width: 256px
+  width: 300px;
+  height: 200px
+
 }
 
 .level-item:not(.is-narrow) {
@@ -90,5 +125,27 @@ export default {
 
 .pagination {
   padding: 0 1rem
+}
+
+.card-content {
+  padding: 1rem;
+  padding-bottom: 0
+}
+
+.content {
+  text-align: left
+}
+
+.navbar-item {
+  padding: 0;
+  padding-right: 0.5rem
+}
+
+.navbar-end .navbar-item {
+  padding-right: 0
+}
+
+i.fa {
+  padding-right: 0.2rem
 }
 </style>

@@ -25,7 +25,7 @@ module.exports = {
     {src: '~assets/css/main.css'}
   ],
   router: {
-    extendRoutes(routes, resolve) {
+    extendRoutes (routes, resolve) {
       routes.push({
         name: 'blog_id',
         path: '/blog/:id',
