@@ -19,7 +19,7 @@
             <p>
               {{blog.content | truncate(700)}}
             </p>
-            <a href="#" class="is-pulled-right">Xem thêm</a>
+            <router-link :to="'/blog/' + blog.blog_id" class="is-pulled-right">Xem thêm</router-link>
             <nav class="level is-mobile">
               <div class="level-left">
                 <a class="level-item">

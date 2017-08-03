@@ -29,7 +29,12 @@ module.exports = {
       routes.push({
         name: 'blog_id',
         path: '/blog/:id',
-        component: resolve(__dirname, 'pages/_id.vue')
+        component: resolve(__dirname, 'pages/blog-detail.vue')
+      });
+      routes.push({
+        name: 'blog_cate',
+        path: '/blog/cate/:id',
+        component: resolve(__dirname, 'pages/blog-cate.vue')
       })
     }
   },

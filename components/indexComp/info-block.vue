@@ -17,7 +17,7 @@
                 <img src="http://bulma.io/images/placeholders/480x320.png">
               </figure>
               <p class="title is-5" style="width: 100%">
-                <a :href="data.title">{{data.title}}</a>
+                <a :href="'/blog/' + data.blog_id">{{data.title}}</a>
               </p>
               <span>
                 <small>{{data.create_at | moment("DD/MM/YYYY")}}</small>
@@ -34,7 +34,7 @@
                 <img src="http://bulma.io/images/placeholders/128x128.png">
               </figure>
               <p class="title is-6" style="width: 100%">
-                <a href="#">{{data.title}}</a>
+                <a :href="'/blog/' + data.blog_id">{{data.title}}</a>
               </p>
               <span>
                 <small>{{data.create_at | moment("DD/MM/YYYY")}}</small>
@@ -62,7 +62,7 @@ export default {
       isBlackDA: false,
       isBlackMV: false,
       blogsInfo1: this.getND.slice(0, 1),
-      blogsInfo2: this.getND.slice(1)
+      blogsInfo2: this.getND.slice(1, 4)
     }
   },
   methods: {
@@ -71,21 +71,21 @@ export default {
       this.isBlackDA = false
       this.isBlackMV = false
       this.blogsInfo1 = this.getND.slice(0, 1)
-      this.blogsInfo2 = this.getND.slice(1)
+      this.blogsInfo2 = this.getND.slice(1, 4)
     },
     changeDALabel () {
       this.isBlackND = false
       this.isBlackDA = true
       this.isBlackMV = false
       this.blogsInfo1 = this.getDA.slice(0, 1)
-      this.blogsInfo2 = this.getDA.slice(1)
+      this.blogsInfo2 = this.getDA.slice(1, 4)
     },
     changeMVLabel () {
       this.isBlackND = false
       this.isBlackDA = false
       this.isBlackMV = true
       this.blogsInfo1 = this.getMV.slice(0, 1)
-      this.blogsInfo2 = this.getMV.slice(1)
+      this.blogsInfo2 = this.getMV.slice(1, 4)
     }
   }
 }
