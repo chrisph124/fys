@@ -8,37 +8,36 @@
             <img src="~assets/img/fys-logo.png">
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/buy">
+            <a class="navbar-link" href="/for_sale">
               Bán
             </a>
             <div class="navbar-dropdown ">
-              <a class="navbar-item " href="/buy/houses">
+              <a class="navbar-item " href="/for_sale/house">
                 Nhà
               </a>
-              <a class="navbar-item " href="/buy/apartments">
+              <a class="navbar-item " href="/for_sale/apartment">
                 Căn hộ
               </a>
-              <a class="navbar-item " href="/buy/villas">
+              <a class="navbar-item " href="/for_sale/villa">
                 Biệt thự
               </a>
-  
             </div>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/rent">
+            <a class="navbar-link" href="/for_rent">
               Cho thuê
             </a>
             <div class="navbar-dropdown ">
-              <a class="navbar-item " href="/rent/houses">
+              <a class="navbar-item " href="/for_rent/house">
                 Nhà trọ
               </a>
-              <a class="navbar-item " href="/rent/rooms">
+              <a class="navbar-item " href="/for_rent/room">
                 Phòng trọ
               </a>
-              <a class="navbar-item " href="/rent/apartments">
+              <a class="navbar-item " href="/for_rent/apartment">
                 Căn hộ
               </a>
-              <a class="navbar-item " href="/rent/villas">
+              <a class="navbar-item " href="/for_rent/villa">
                 Biệt thự
               </a>
   

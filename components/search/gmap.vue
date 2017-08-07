@@ -37,6 +37,6 @@ export default {
 div {
   max-height: 100%;
   height: 850px;
-  padding: 1rem 1rem 1rem 0
+  margin: 0 0 2.5rem 0 
 }
 </style>

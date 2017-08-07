@@ -62,5 +62,6 @@
   border-radius: 0;
   border: none;
   color: #363636;
+  padding-left: 0
 }
 </style>

@@ -5,8 +5,9 @@
       <div class="columns is-12">
         <div class="column">
           <div class="highlight">
+            <h2 class="title">Subtitle</h2>
             <nav class="level">
-              <div class="level-item" v-for="item in 15">
+              <div class="level-item" v-for="item in 18" :key="item">
                 <div class="card">
                   <div class="card-image">
                     <figure class="image">
@@ -60,35 +61,62 @@ export default {
 </script>
 
 <style scoped>
-/* .container-fluid {
-  margin-bottom: 2.5rem
-} */
+.column {
+  padding: 0.75rem 0
+}
+
+.title:not(:last-child),
+.subtitle:not(:last-child) {
+  margin: 0;
+  padding: 1.75rem;
+  padding-top: 0
+}
 
 .highlight {
-  max-height: 770px;
+  max-height: 780px;
   overflow: auto
 }
+
 
 .level {
   display: flex;
   flex-flow: row wrap;
+  padding: 0 0 0 1rem
 }
 
 .level-item {
-  margin: 1rem;
+  margin: 0 0 1.75rem 0;
   color: white;
-  text-align: center;
+  width: 316px;
+}
+
+.card {
+  border-radius: 3%
 }
 
 .image img {
-  width: 256px
+  width: 316px;
+  height: 160px;
+  border-top-left-radius: 3%;
+  border-top-right-radius: 3%
 }
 
-.level-item:not(.is-narrow) {
-  flex-grow: 0
+.card-image {
+  width: 316px;
 }
+
+
+.card-content {
+  text-align: left;
+  padding: 0.5rem
+}
+
 
 .pagination {
-  padding: 0 1rem
+  margin: 1rem 1rem 0 1.5rem
+}
+
+.pagination-next {
+  margin: 0
 }
 </style>

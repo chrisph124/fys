@@ -18,6 +18,9 @@ export default {
 </script>
 
 <style>
+body {
+  overflow-x: initial
+}
 .container {
   margin: 0;
   width: 100%;
@@ -26,6 +29,6 @@ export default {
 }
 
 #nuxt {
-  margin: 0 0 2.5rem 0
+  margin: 0 0 1rem 0
 }
 </style>
