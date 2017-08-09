@@ -11,7 +11,7 @@
       </div>
       <div class="navbar-end">
         <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Phòng ngủ</div>
+          <div class="navbar-link">Giá</div>
           <div class="navbar-dropdown">
             <div class="navbar-item">ok</div>
             <div class="navbar-item">ok</div>
@@ -27,7 +27,15 @@
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Phòng ngủ</div>
+          <div class="navbar-link">Kiểu nhà</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item">ok</div>
+            <div class="navbar-item">ok</div>
+            <div class="navbar-item">ok</div>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Tìm kiếm nâng cao</div>
           <div class="navbar-dropdown">
             <div class="navbar-item">ok</div>
             <div class="navbar-item">ok</div>

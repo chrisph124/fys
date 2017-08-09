@@ -40,15 +40,28 @@
               <div class="card">
                 <div class="card-image">
                   <figure class="image">
-                    <!-- <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image"> -->
-                    <i class="fa fa-info-circle fa-4x" aria-hidden="true"></i>
+                    <router-link to='#'>
+                      <img src="http://bulma.io/images/placeholders/256x256.png" alt="Image">
+                      <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i>
+                    </router-link>
                   </figure>
-                  <div class="card-content">
-                    <div class="content">
-                      <div>
-                        <p>
-                          <a href="#">2,000,000,000 &#8363;</a>
-                        </p>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <router-link to="#">
+                      <div class="price">
+                        2,000,000,000 vnd
+                      </div>
+                      <div class="basic-info">
+                        <span>
+                          <i class="fa fa-bed" aria-hidden="true"></i>3PN
+                        </span>
+                        <span>
+                          <i class="fa fa-bath" aria-hidden="true"></i>2 PT
+                        </span>
+                        <span>
+                          <i class="fa fa-arrows-alt" aria-hidden="true"></i>100m&#178;
+                        </span>
                       </div>
                       <div>
                         <small>844 Hai Bà Trưng</small>
@@ -56,18 +69,10 @@
                       <div>
                         <small>Tràng Tiền, Hoàn Kiếm, Hà Nội</small>
                       </div>
-                      <div class="basic-info">
-                        <span>
-                          <i class="fa fa-bed" aria-hidden="true">3</i>
-                        </span>
-                        <span>
-                          <i class="fa fa-bath" aria-hidden="true">2</i>
-                        </span>
-                        <span>
-                          <i class="fa fa-arrows-alt" aria-hidden="true">100m&#178;</i>
-                        </span>
+                      <div>
+                        <small>Căn hộ chung cư</small>
                       </div>
-                    </div>
+                    </router-link>
                   </div>
                 </div>
               </div>
@@ -122,7 +127,6 @@ export default {
   margin-bottom: 0
 }
 
-
 .sort {
   padding: 0 0.5rem 0 1.5rem;
   height: 60px;
@@ -152,48 +156,79 @@ a.navbar-item:hover {
   background-color: #00d1b2
 }
 
+.price {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
 .level-item {
   margin: 0 0 1rem 0;
   color: white;
-  width: 316px;
+  width: 304px;
 }
 
 .card {
   border-radius: 3%
 }
 
-.image, .image img {
-  width: 316px;
+.image {
+  width: 304px;
+  height: 160px;
+  text-align: center
+}
+
+figure.image i {
+  opacity: 0;
+  position: absolute;
+  color: #00d1b2;
+  top: 0;
+  left: 0;
+  width: 304px;
+  line-height: 160px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-top-left-radius: 3%;
+  border-top-right-radius: 3%;
+}
+
+.card:hover i {
+  opacity: 1;
+}
+
+.card-image,
+.card-image img {
+  width: 304px;
   height: 160px;
   border-top-left-radius: 3%;
-  border-top-right-radius: 3%
+  border-top-right-radius: 3%;
 }
-
-.card-image {
-  width: 316px;
-}
-
 
 .card-content {
   text-align: left;
-  padding: 0.5rem
+  padding: 0.5rem;
+  border-bottom-left-radius: 3%;
+  border-bottom-right-radius: 3%;
+}
+
+.card-content small {
+  color: #4a4a4a
 }
 
 .basic-info {
   padding-top: 0.25rem
 }
 
-.basic-info span{
+.basic-info span {
   margin-right: 1rem;
+  color: black;
 }
 
-.basic-info .fa p {
-  font-family: 'Open Sans', sans-serif;
-  color: #4a4a4a
+.basic-info .fa-bed {
+  line-height: 25px;
 }
 
 .basic-info .fa::before {
-  padding-right: 0.25rem
+  padding-right: 0.25rem;
+  line-height: 20px;
 }
 
 .pagination {
