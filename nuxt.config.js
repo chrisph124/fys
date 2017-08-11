@@ -1,5 +1,4 @@
 const webpack = require('webpack')
-
 module.exports = {
   /*
    ** Headers of the page

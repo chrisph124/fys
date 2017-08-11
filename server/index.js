@@ -20,6 +20,7 @@ async function start () {
         // Instanciate nuxt.js
   const nuxt = new Nuxt(config)
         // Add nuxt.js middleware
+  process.env.DEBUG = 'nuxt:*'
   app.use(nuxt.render)
         // Listen the server
   app.listen(port, host)

@@ -226,6 +226,11 @@ figure.image i {
   line-height: 25px;
 }
 
+.basic-info {
+  font-size: 0.9rem
+}
+
+
 .basic-info .fa::before {
   padding-right: 0.25rem;
   line-height: 20px;

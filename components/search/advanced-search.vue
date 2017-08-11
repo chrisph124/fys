@@ -10,42 +10,36 @@
         </div>
       </div>
       <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Giá</div>
-          <div class="navbar-dropdown">
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Phòng ngủ</div>
-          <div class="navbar-dropdown">
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Kiểu nhà</div>
-          <div class="navbar-dropdown">
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Tìm kiếm nâng cao</div>
-          <div class="navbar-dropdown">
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-            <div class="navbar-item">ok</div>
-          </div>
-        </div>
+        <price/>
+        <bedroom/>
+        <type/>
+        <amenities/>
+        <advanced/>
       </div>
     </nav>
   </div>
 </template>
+
+<script>
+import price from '~components/search/advanced-search/price'
+import bedroom from '~components/search/advanced-search/bedroom'
+import type from '~components/search/advanced-search/type'
+import amenities from '~components/search/advanced-search/amenities'
+import advanced from '~components/search/advanced-search/advanced'
+export default {
+  components: { price, bedroom, type, amenities, advanced },
+  data () {
+    return {
+      isActive: false
+    }
+  },
+  methods: {
+    showActive () {
+      this.isActive = !this.isActive
+    }
+  }
+}
+</script>
 
 
 <style scoped>
@@ -53,23 +47,59 @@
   height: 400px
 }
 
+.navbar {
+  padding: 1rem 1rem 1rem 0.5rem
+}
+
+.navbar-start {
+  margin-right: 3rem;
+}
+
 .navbar-end {
-  padding: 0.5rem 1rem
+  margin-left: 0
+}
+
+.navbar-end .navbar-item,
+.dropdown {
+  margin-right: 1rem
+}
+
+.dropdown {
+  border: 1px solid #00d1b2;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0 0.5rem
+}
+
+.button {
+  border: none;
+}
+
+.navbar-item .button:focus {
+  box-shadow: none
+}
+
+.navbar-item {
+  border: 1px solid #00d1b2;
+  border-radius: 5px;
+  padding: 0
+}
+
+.navbar-link:hover {
+  border-radius: 5px;
+}
+
+.navbar-dropdown {
+  border-top: none;
+  margin-top: 1px;
 }
 
 .input {
   border-radius: 0;
   border: none;
   box-shadow: none;
-  padding-left: 0;
+  padding: 0;
   max-width: 100%;
   width: 500px;
-}
-
-.button {
-  border-radius: 0;
-  border: none;
-  color: #363636;
-  padding-left: 0
 }
 </style>
