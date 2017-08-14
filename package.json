@@ -10,7 +10,7 @@
     "start": "nuxt start",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run dev"
   },
   "keywords": [
     "example",
@@ -20,7 +20,6 @@
     "node": "6.11.2"
   },
   "dependencies": {
-    "pg": "6.x",
     "axios": "^0.16.1",
     "bluebird": "^3.5.0",
     "bulma": "^0.4.3",
@@ -28,6 +27,7 @@
     "express": "^4.15.3",
     "font-awesome": "^4.7.0",
     "nuxt": "^1.0.0-alpha.3",
+    "pg": "6.4.2",
     "pg-monitor": "^0.8.2",
     "pg-promise": "^6.3.5",
     "source-map-support": "^0.4.15",
