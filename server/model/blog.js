@@ -111,6 +111,26 @@ class Blog extends Model {
     LIMIT 1`, id);
   }
 
+  selectByPagination(n, pgfrom){
+    return this.db.many(`
+    SELECT DISTINCT ON (blog.blog_id)
+    blog.blog_id, title, content, create_at, name, last_name, first_name, url
+    FROM
+    blog, fys_user, blog_category, blog_picture
+    WHERE
+    blog.user_id = fys_user.user_id
+    AND
+    blog.blog_cate_id = blog_category.blog_cate_id
+    AND
+    blog_picture.blog_id = blog.blog_id
+    ORDER BY blog.blog_id DESC
+    LIMIT $1 OFFSET $2`, [n, pgfrom]);
+  }
+
+  countAll() {
+    return this.db.many(`SELECT count(*) FROM blog`);
+  }
+
 }
 
 module.exports = Blog

@@ -34,7 +34,12 @@ module.exports = {
         name: 'blog_cate',
         path: '/blog/cate/:id',
         component: resolve(__dirname, 'pages/blog-cate.vue')
-      })
+      });
+      routes.push({
+        name: 'blog_paging',
+        path: '/blog/page/:id',
+        component: resolve(__dirname, 'pages/blog.vue')
+      });
     }
   },
   plugins: ['~plugins/filters.js', '~plugins/moment.js'],
