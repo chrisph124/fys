@@ -22,7 +22,7 @@ build
 
 #config.json
 server/config/config.json
-=======
+======
 # Logs
 logs
 *.log
