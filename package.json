@@ -11,6 +11,13 @@
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "engines": {
+    "node": "8.2.1"
+  },
   "dependencies": {
     "axios": "^0.16.1",
     "bluebird": "^3.5.0",
