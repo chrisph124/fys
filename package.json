@@ -17,7 +17,7 @@
     "heroku"
   ],
   "engines": {
-    "node": "8.2.1"
+    "node": "6.11.2"
   },
   "dependencies": {
     "pg": "6.x",
