@@ -29,7 +29,7 @@ module.exports = {
         name: 'blog_id',
         path: '/blog/:id',
         component: resolve(__dirname, 'pages/blog-detail.vue')
-      });
+      })
       routes.push({
         name: 'blog_cate',
         path: '/blog/cate/:id',

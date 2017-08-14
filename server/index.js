@@ -4,6 +4,7 @@ import express from 'express'
 import api from './api'
 
 const app = express()
+const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3000
 
 app.set('port', port)
@@ -22,8 +23,8 @@ async function start () {
   process.env.DEBUG = 'nuxt:*'
   app.use(nuxt.render)
         // Listen the server
-  app.listen(port)
-  console.log('Server started ' + port) // eslint-disable-line no-console
+  app.listen(port, host)
+  console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
 }
 
 start()
