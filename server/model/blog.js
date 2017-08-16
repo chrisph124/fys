@@ -27,8 +27,8 @@ class Blog extends Model {
     LIMIT 15 `)
   }
 
-  selectBlogForCate (id) {
-    return this.db.any(`
+  selectBlogForCate (id, n , pgfrom) {
+    /*return this.db.any(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
     FROM
@@ -42,7 +42,22 @@ class Blog extends Model {
     AND
     blog_category.blog_cate_id = $1
     ORDER BY blog.blog_id DESC
-    LIMIT 15`, id)
+    LIMIT 15`, id)*/
+    return this.db.many(`
+    SELECT DISTINCT ON (blog.blog_id)
+    blog.blog_id, title, content, create_at, name, last_name, first_name, url
+    FROM
+    blog, fys_user, blog_category, blog_picture
+    WHERE
+    blog.user_id = fys_user.user_id
+    AND
+    blog.blog_cate_id = blog_category.blog_cate_id
+    AND
+    blog_picture.blog_id = blog.blog_id
+    AND 
+    blog_category.blog_cate_id = $1
+    ORDER BY blog.blog_id DESC
+    LIMIT $2 OFFSET $3`, [id, n, pgfrom]);
   }
 
   selectBlogForND () {
@@ -129,6 +144,10 @@ class Blog extends Model {
 
   countAll() {
     return this.db.many(`SELECT count(*) FROM blog`);
+  }
+
+  countByCate(id) {
+    return this.db.many(`SELECT count(*) FROM blog WHERE blog_cate_id = $1`, id);
   }
 
 }

@@ -42,14 +42,14 @@
                 <a class="pagination-next">Next 5 pages</a>-->
                 <ul class="pagination-list">
                     <li v-if="pagecurrent > 1">
-                        <a class="pagination-link" :href="`/blog/page/${pagecurrent-1}`">Prev</a>
+                        <a class="pagination-link" :href="`${url}${pagecurrent-1}`">Prev</a>
                     </li>
                     <li v-for="i in (1, allpage)">
-                        <a v-if="pagecurrent == i" class="pagination-link is-current" :href="`/blog/page/${i}`">{{i}}</a>
-                        <a v-else class="pagination-link" :href="`/blog/page/${i}`">{{i}}</a>
+                        <a v-if="pagecurrent == i" class="pagination-link is-current" :href="`${url}${i}`">{{i}}</a>
+                        <a v-else class="pagination-link" :href="`${url}${i}`">{{i}}</a>
                     </li>
                     <li v-if="pagecurrent < allpage">
-                        <a class="pagination-link" :href="`/blog/page/${pagecurrent+1}`">Next</a>
+                        <a class="pagination-link" :href="`${url}${pagecurrent+1}`">Next</a>
                     </li>
                 </ul>
             </nav>
@@ -60,7 +60,7 @@
 
 <script>
   export default {
-    props: ['blogs', 'countall', 'allpage', 'pagecurrent']
+    props: ['blogs', 'countall', 'allpage', 'pagecurrent', 'url']
   }
 </script>
 

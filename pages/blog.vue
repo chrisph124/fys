@@ -4,7 +4,7 @@
             <search/>
             <div class="columns is-marginless">
                 <left-col/>
-                <right-col v-show="!isShow" :blogs="blogsData" :countall="countAlls" :allpage="allPages" :pagecurrent="pageCurrents"/>
+                <right-col v-show="!isShow" :blogs="blogsData" :countall="countAlls" :allpage="allPages" :pagecurrent="pageCurrents" :url="urls"/>
                 <!-- <ul>
                      <li v-for="animal in blogsData">
                          {{ animal.title }}
@@ -28,36 +28,27 @@
   export default {
     components: {leftCol, rightCol, search},
     async asyncData ({params}) {
-      let dataBlog = await axios.get('/api/blogs/?page=' + `${params.id}`)
+      let dataBlog = await axios.get(`/api/blogs/?page=${params.page}`)
       // console.log(dataBlog.data)
         /* let {dataDetail} = await axios.get('/api/blogs/:id') */
       return {
         blogsData: dataBlog.data.blogs,
         countAlls: dataBlog.data.countAll,
         allPages: dataBlog.data.allpage,
-        pageCurrents: dataBlog.data.pageCurrent
+        pageCurrents: dataBlog.data.pageCurrent,
+        urls: '/blog/page/'
           /* detailsData: dataDetail */
       }
     },
     data () {
       return {
         blogsData: '',
+        countAlls: '',
+        allPages: '',
+        pageCurrents: '',
+        urls: '/blog/page/',
           /* detailsData: '', */
-        isShow: false,
-        pagination: {
-          total: 0,
-          per_page: 12,    // required
-          current_page: 1, // required
-          last_page: 0,    // required
-          from: 1,
-          to: 12
-        },
-        paginationOptions: {
-          offset: 4,
-          previousText: 'Prev',
-          nextText: 'Next',
-          alwaysShowPrevNext: true
-        }
+        isShow: false
       }
     }
       /* ,
