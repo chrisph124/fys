@@ -28,9 +28,9 @@
                         <li>
                             <a href="#">{{details.cate_name}}</a>
                         </li>
-                        <li class="is-active">
+                        <!--<li class="is-active">
                             <a href="#">{{details.title | truncate(10)}}</a>
-                        </li>
+                        </li>-->
                     </ul>
                 </nav>
                 <div class="content">

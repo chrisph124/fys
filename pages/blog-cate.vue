@@ -3,7 +3,7 @@
         <search/>
         <div class="columns is-marginless">
             <left-col/>
-            <right-col v-show="!isShow" :blogs="blogsData"/>
+            <right-col v-show="!isShow" :blogs="blogsData" :countall="countAlls" :allpage="allPages" :pagecurrent="pageCurrents" :url="urls"/>
             <!--<detail-col v-show="isShow" :details="detailsData"/>-->
         </div>
     </div>
@@ -19,16 +19,25 @@
   export default {
     components: {leftCol, rightCol, search},
     async asyncData ({params}) {
-      let dataBlog = await axios.get('/api/blogs/cate/' + `${params.id}`)
+      let dataBlog = await axios.get(`/api/blogs/cate/` + `${params.id}` + `/?page=` + `${params.page}`)
+      console.log(dataBlog.data)
         /* let {dataDetail} = await axios.get('/api/blogs/:id') */
       return {
-        blogsData: dataBlog.data
+        blogsData: dataBlog.data.blogs,
+        countAlls: dataBlog.data.countAll,
+        allPages: dataBlog.data.allpage,
+        pageCurrents: dataBlog.data.pageCurrent,
+        urls: `/blog/cate/${params.id}/page/`
           /* detailsData: dataDetail */
       }
     },
     data () {
       return {
         blogsData: '',
+        countAlls: '',
+        allPages: '',
+        pageCurrents: '',
+        urls: '/blog/page/',
           /* detailsData: '', */
         isShow: false
       }
