@@ -1,20 +1,18 @@
 <template>
-    <button class="button is-default" :class="{'is-primary': isPrimary}" @click="showPrimary(item)">
-      {{item}}
+    <button 
+    class="button is-default" 
+    :class="{'is-primary': isStatus }" 
+    @click="toggleActive">
+      {{item.name}}
     </button>
 </template>
 
 <script>
 export default {
-  props: ['item'],
-  data () {
-    return {
-      isPrimary: false
-    }
-  },
+  props: ['item', 'isStatus'],
   methods: {
-    showPrimary (item) {
-      this.isPrimary = !this.isPrimary
+    toggleActive () {
+      this.$emit('activate')
     }
   }
 }

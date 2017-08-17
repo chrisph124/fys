@@ -40,11 +40,11 @@
           <div>
             <button 
             class="button is-default" 
-            :class="{'is-primary': isPrimary}" 
+            :class="{'is-primary': bed.status}" 
             v-for="(bed, index) of beds" 
             :key="index"
-            @click="primaryFunc()">
-              {{bed}}
+            @click="primaryFunc(true)">
+              {{bed.name}}
             </button>
           </div>
         </div>
@@ -59,7 +59,13 @@ export default {
     return {
       isPrimary: false,
       isActive: false,
-      beds: ['Tất cả', '1+', '2+', '3+', '4+'],
+      beds: [
+        { name: 'Tất cả', status: false },
+        { name: '1+', status: false },
+        { name: '2+', status: false },
+        { name: '3+', status: false },
+        { name: '4+', status: false }
+      ],
       propertiesForSale: [
         { id: 'np', name: 'Nhà phố' },
         { id: 'ch', name: 'Căn hộ' },
@@ -102,8 +108,11 @@ export default {
     showPrimary (item) {
       this.isPrimary = !this.isPrimary
     },
-    primaryFunc () {
-      this.isPrimary = true
+    isActive (eachItem) {
+      return this.status === eachItem
+    },
+    primaryFunc (eachItem) {
+      this.status = eachItem
     }
   }
 }

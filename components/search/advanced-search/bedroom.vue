@@ -1,5 +1,5 @@
 <template>
-  <div :class="{dropdown: 'dropdown', 'is-active': isActive}">
+  <div :class="{dropdown: 'dropdown', 'is-active': isDrop}">
     <div class="dropdown-trigger">
       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3" @click="showActive()">
         <span>Phòng ngủ</span>
@@ -10,7 +10,12 @@
     </div>
     <div class="dropdown-menu" id="dropdown-menu3" role="menu">
       <div class="dropdown-content">
-        <buttons v-for="(item, index) of buttons" :key='item' :item='item'/>
+        <buttons 
+        v-for="(button, index) of buttons"
+        :key='index'
+        :item='button'
+        :is-status='button.status'
+        @activate="activateButton(button)"/>
       </div>
     </div>
   </div>
@@ -22,13 +27,25 @@ export default {
   components: { buttons },
   data () {
     return {
-      isActive: false,
-      buttons: ['Any', '1+', '2+', '3+', '4+', 'Studio+']
+      isDrop: false,
+      buttons: [
+        {name: 'Any', status: false},
+        {name: '2+', status: false},
+        {name: '3+', status: false},
+        {name: '4+', status: false},
+        {name: '5+', status: false},
+        {name: 'Studio', status: false}
+      ]
     }
   },
   methods: {
     showActive () {
-      this.isActive = !this.isActive
+      this.isDrop = !this.isDrop
+    },
+    activateButton (activatedButton) {
+      for (let button of this.buttons) {
+        button.status = button === activatedButton
+      }
     }
   }
 }
