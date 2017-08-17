@@ -41,6 +41,11 @@ module.exports = {
         component: resolve(__dirname, 'pages/blog-cate.vue')
       });
       routes.push({
+        name: 'blog_cate_paging',
+        path: '/blog/cate/:id/page/:page',
+        component: resolve(__dirname, 'pages/blog-cate.vue')
+      });
+      routes.push({
         name: 'blog_paging',
         path: '/blog/page/:page',
         component: resolve(__dirname, 'pages/blog.vue')
