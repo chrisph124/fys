@@ -10,7 +10,7 @@
     </div>
     <div class="dropdown-menu" id="dropdown-menu3" role="menu">
       <div class="dropdown-content">
-        <buttons v-for="item in buttons" :key='item' :item='item' />
+        <buttons v-for="(item, index) of buttons" :key='item' :item='item'/>
       </div>
     </div>
   </div>

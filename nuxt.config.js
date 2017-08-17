@@ -21,7 +21,7 @@ module.exports = {
   css: [
     {src: 'bulma/css/bulma.css'},
     {src: 'font-awesome/css/font-awesome.css'},
-    {src: '~assets/css/main.css'}
+    {src: '~assets/css/main.css'},
   ],
   router: {
     extendRoutes (routes, resolve) {
@@ -34,12 +34,12 @@ module.exports = {
         name: 'blog_cate',
         path: '/blog/cate/:id',
         component: resolve(__dirname, 'pages/blog-cate.vue')
-      });
+      })
       routes.push({
         name: 'blog_paging',
         path: '/blog/page/:id',
         component: resolve(__dirname, 'pages/blog.vue')
-      });
+      })
     }
   },
   plugins: ['~plugins/filters.js', '~plugins/moment.js'],

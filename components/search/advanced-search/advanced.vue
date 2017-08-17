@@ -19,8 +19,8 @@
           <small>Dạng tài sản</small>
           <div>
             <span v-for="item in propertiesForSale" :key="item.id">
-            <input type="checkbox" :id="item.id">
-            <label :for="item.id">{{item.name}}</label>
+              <input type="checkbox" :id="item.id">
+              <label :for="item.id">{{item.name}}</label>
             </span>
           </div>
         </div>
@@ -28,10 +28,24 @@
         <div class="navbar-item">
           <small>Tiện ích</small>
           <div>
-            <span v-for="(item, index) in amenities" :key="item.index">
-            <input type="checkbox" :id="item.id">
-            <label :for="item.id">{{item.name}}</label>
+            <span v-for="(item, index) of amenities" :key="item.index">
+              <input type="checkbox" :id="item.id">
+              <label :for="item.id">{{item.name}}</label>
             </span>
+          </div>
+        </div>
+        <hr class="dropdown-divider">
+        <div class="navbar-item">
+          <small>Phòng ngủ</small>
+          <div>
+            <button 
+            class="button is-default" 
+            :class="{'is-primary': isPrimary}" 
+            v-for="(bed, index) of beds" 
+            :key="index"
+            @click="primaryFunc()">
+              {{bed}}
+            </button>
           </div>
         </div>
       </div>
@@ -43,11 +57,14 @@
 export default {
   data () {
     return {
+      isPrimary: false,
       isActive: false,
+      beds: ['Tất cả', '1+', '2+', '3+', '4+'],
       propertiesForSale: [
         { id: 'np', name: 'Nhà phố' },
         { id: 'ch', name: 'Căn hộ' },
-        { id: 'bt', name: 'Biệt thự' }
+        { id: 'bt', name: 'Biệt thự' },
+        { id: 'dn', name: 'Đất nền' }
       ],
       propertiesForRent: [
         { id: 'pt', name: 'Phòng trọ' },
@@ -81,6 +98,12 @@ export default {
   methods: {
     showActive () {
       this.isActive = !this.isActive
+    },
+    showPrimary (item) {
+      this.isPrimary = !this.isPrimary
+    },
+    primaryFunc () {
+      this.isPrimary = true
     }
   }
 }
@@ -95,13 +118,12 @@ export default {
 
 .dropdown-content {
   margin-top: 1px;
-  padding: 0.5rem;
-  width: 22rem;
+  width: 21rem;
   text-align: center
 }
 
-.dropdown-content small {
-  font-size: 1rem
+.navbar-item > small {
+  font-size: 1rem;
 }
 
 .dropdown .button:focus {
@@ -116,8 +138,8 @@ export default {
 .navbar-item div {
   display: flex;
   flex-flow: row wrap;
-  justify-content: left;
-  text-align: center
+  justify-content: center;
+  margin-top: 0.5rem;
 }
 
 .navbar-item div span {
@@ -140,24 +162,29 @@ export default {
   padding: 1rem;
   border: 1px solid #00d1b2;
   line-height: 0;
+  border-right: none;
 }
 
 .is-default:first-child {
-  border-right: none;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px
 }
 
-.is-default:nth-child(2) {
+.is-default:last-child {
+  border-right: 1px solid #00d1b2;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px
 }
 
-.is-default:hover { background-color: #00d1b2 }
+.is-default:hover {
+  background-color: #00d1b2
+}
 
-input[type="checkbox"] { display: none }
+input[type="checkbox"] {
+  display: none
+}
 
-input[type="checkbox"] + label {
+input[type="checkbox"]+label {
   display: block;
   position: relative;
   padding: 0 10px 0 25px;
@@ -173,7 +200,7 @@ input[type="checkbox"] + label {
 
 
 
-input[type="checkbox"] + label:before {
+input[type="checkbox"]+label:before {
   content: '';
   display: block;
   width: 20px;
@@ -187,7 +214,7 @@ input[type="checkbox"] + label:before {
   transition: all .12s, border-color .08s;
 }
 
-input[type="checkbox"]:checked + label:before {
+input[type="checkbox"]:checked+label:before {
   width: 10px;
   top: -5px;
   left: 5px;
