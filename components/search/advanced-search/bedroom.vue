@@ -29,7 +29,7 @@ export default {
     return {
       isDrop: false,
       buttons: [
-        {name: 'Any', status: false},
+        {name: 'Tất cả', status: false},
         {name: '2+', status: false},
         {name: '3+', status: false},
         {name: '4+', status: false},
