@@ -19,14 +19,6 @@ Vue.use(VueGoogleMaps, {
   }
 })
 export default {
-  head: {
-    script: [
-      { src: '~assets/js/map-icons.min.js' }
-    ],
-    css: [
-      { src: '~assets/css/map-icons.min.js' }
-    ]
-  },
   data () {
     return {
       mapScroll: false,
