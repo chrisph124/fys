@@ -28,7 +28,7 @@
   export default {
     components: {leftCol, rightCol, search},
     async asyncData ({params}) {
-      let dataBlog = await axios.get(`/api/blogs/?page=${params.page}`)
+      let dataBlog = await axios.get(`/api/blogs/?trang=${params.pages}`)
       // console.log(dataBlog.data)
         /* let {dataDetail} = await axios.get('/api/blogs/:id') */
       return {
