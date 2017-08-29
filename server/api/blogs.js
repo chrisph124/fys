@@ -57,17 +57,6 @@ router.get('/blogs/:id', (req, res, next) => {
 });
 
 router.get('/blogs/cate/:id', (req, res, next) => {
-  /*let id = req.params.id;
-  blog.selectBlogForCate(id)
-    .then(data => {
-      res.json(data);
-    })
-    .catch(error => {
-      res.json({
-        success: false,
-        error: error.message || error
-      });
-    })*/
   let id = req.params.id;
   let q = parseInt(req.query.page) || 1;
   let n = 15;
@@ -112,10 +101,11 @@ router.get('/blogs/cate/:id', (req, res, next) => {
 
 router.get('/blogs/', (req, res, next) => {
   //console.log(req.query)
-  let q = parseInt(req.query.page);
+  let q = parseInt(req.query.trang);
   let n = 15;
   let pgfrom = 0;
   if (q != undefined && q > 0) {
+
     pgfrom = (pgfrom + q - 1) * n;
   } else {
     q = 1;

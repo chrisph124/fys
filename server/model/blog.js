@@ -15,47 +15,23 @@ class Blog extends Model {
     return this.db.any(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
-    FROM
-    blog, fys_user, blog_category, blog_picture
-    WHERE
-    blog.user_id = fys_user.user_id
-    AND
-    blog.blog_cate_id = blog_category.blog_cate_id
-    AND
-    blog_picture.blog_id = blog.blog_id
+    FROM blog, fys_user, blog_category, blog_picture
+    WHERE blog.user_id = fys_user.user_id
+    AND blog.blog_cate_id = blog_category.blog_cate_id
+    AND blog_picture.blog_id = blog.blog_id
     ORDER BY blog.blog_id DESC
     LIMIT 15 `)
   }
 
   selectBlogForCate (id, n , pgfrom) {
-    /*return this.db.any(`
-    SELECT DISTINCT ON (blog.blog_id)
-    blog.blog_id, title, content, create_at, name, last_name, first_name, url
-    FROM
-    blog, fys_user, blog_category, blog_picture
-    WHERE
-    blog.user_id = fys_user.user_id
-    AND
-    blog.blog_cate_id = blog_category.blog_cate_id
-    AND
-    blog_picture.blog_id = blog.blog_id
-    AND
-    blog_category.blog_cate_id = $1
-    ORDER BY blog.blog_id DESC
-    LIMIT 15`, id)*/
     return this.db.many(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
-    FROM
-    blog, fys_user, blog_category, blog_picture
-    WHERE
-    blog.user_id = fys_user.user_id
-    AND
-    blog.blog_cate_id = blog_category.blog_cate_id
-    AND
-    blog_picture.blog_id = blog.blog_id
-    AND 
-    blog_category.blog_cate_id = $1
+    FROM blog, fys_user, blog_category, blog_picture
+    WHERE blog.user_id = fys_user.user_id
+    AND blog.blog_cate_id = blog_category.blog_cate_id
+    AND blog_picture.blog_id = blog.blog_id
+    AND blog_category.blog_cate_id = $1
     ORDER BY blog.blog_id DESC
     LIMIT $2 OFFSET $3`, [id, n, pgfrom]);
   }
@@ -64,16 +40,11 @@ class Blog extends Model {
     return this.db.any(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
-    FROM
-    blog, fys_user, blog_category, blog_picture
-    WHERE
-    blog.user_id = fys_user.user_id
-    AND
-    blog.blog_cate_id = blog_category.blog_cate_id
-    AND
-    blog_picture.blog_id = blog.blog_id
-    AND
-    name = 'Nhà đất'
+    FROM blog, fys_user, blog_category, blog_picture
+    WHERE blog.user_id = fys_user.user_id
+    AND blog.blog_cate_id = blog_category.blog_cate_id
+    AND blog_picture.blog_id = blog.blog_id
+    AND name = 'Nhà đất'
     ORDER BY blog.blog_id DESC
     LIMIT 15`)
   }
@@ -82,16 +53,11 @@ class Blog extends Model {
     return this.db.any(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
-    FROM
-    blog, fys_user, blog_category, blog_picture
-    WHERE
-    blog.user_id = fys_user.user_id
-    AND
-    blog.blog_cate_id = blog_category.blog_cate_id
-    AND
-    blog_picture.blog_id = blog.blog_id
-    AND
-    name = 'Dự án mới'
+    FROM blog, fys_user, blog_category, blog_picture
+    WHERE blog.user_id = fys_user.user_id
+    AND blog.blog_cate_id = blog_category.blog_cate_id
+    AND blog_picture.blog_id = blog.blog_id
+    AND name = 'Dự án mới'
     ORDER BY blog.blog_id DESC
     LIMIT 15`)
   }
@@ -100,16 +66,11 @@ class Blog extends Model {
     return this.db.any(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
-    FROM
-    blog, fys_user, blog_category, blog_picture
-    WHERE
-    blog.user_id = fys_user.user_id
-    AND
-    blog.blog_cate_id = blog_category.blog_cate_id
-    AND
-    blog_picture.blog_id = blog.blog_id
-    AND
-    name = 'Mẹo vặt'
+    FROM blog, fys_user, blog_category, blog_picture
+    WHERE blog.user_id = fys_user.user_id
+    AND blog.blog_cate_id = blog_category.blog_cate_id
+    AND blog_picture.blog_id = blog.blog_id
+    AND name = 'Mẹo vặt'
     ORDER BY blog.blog_id DESC
     LIMIT 15`)
   }
@@ -130,14 +91,10 @@ class Blog extends Model {
     return this.db.many(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
-    FROM
-    blog, fys_user, blog_category, blog_picture
-    WHERE
-    blog.user_id = fys_user.user_id
-    AND
-    blog.blog_cate_id = blog_category.blog_cate_id
-    AND
-    blog_picture.blog_id = blog.blog_id
+    FROM blog, fys_user, blog_category, blog_picture
+    WHERE blog.user_id = fys_user.user_id
+    AND blog.blog_cate_id = blog_category.blog_cate_id
+    AND blog_picture.blog_id = blog.blog_id
     ORDER BY blog.blog_id DESC
     LIMIT $1 OFFSET $2`, [n, pgfrom]);
   }

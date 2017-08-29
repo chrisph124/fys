@@ -42,12 +42,21 @@ module.exports = {
       })
       routes.push({
         name: 'blog_paging',
-        path: '/blog/page/:page',
+        path: '/blog/page/:pages',
         component: resolve(__dirname, 'pages/blog.vue')
+      })
+      routes.push({
+        name: 'post_paging',
+        path: '/for_sale/page/:pages',
+        component: resolve(__dirname, 'pages/for_sale.vue')
       })
     }
   },
   plugins: ['~plugins/filters.js', '~plugins/moment.js'],
+  axios: {
+    baseURL: 'http://127.0.0.1:3000/api',
+    debug: true
+  },
   /*
    ** Add axios globally
    */
