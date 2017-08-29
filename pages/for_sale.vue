@@ -109,8 +109,8 @@
 </template>
 
 <script>
-import advancedSearch from '~components/search/advanced-search.vue'
-import gmap from '~components/search/gmap.vue'
+import advancedSearch from '~/components/search/advanced-search.vue'
+import gmap from '~/components/search/gmap.vue'
 
 export default {
   components: { advancedSearch, gmap }

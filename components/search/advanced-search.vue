@@ -21,18 +21,13 @@
 </template>
 
 <script>
-import price from '~components/search/advanced-search/price'
-import bedroom from '~components/search/advanced-search/bedroom'
-import type from '~components/search/advanced-search/type'
-import amenities from '~components/search/advanced-search/amenities'
-import advanced from '~components/search/advanced-search/advanced'
+import price from '~/components/search/advanced-search/price'
+import bedroom from '~/components/search/advanced-search/bedroom'
+import type from '~/components/search/advanced-search/type'
+import amenities from '~/components/search/advanced-search/amenities'
+import advanced from '~/components/search/advanced-search/advanced'
 export default {
   components: { price, bedroom, type, amenities, advanced },
-  data () {
-    return {
-      isActive: false
-    }
-  },
   methods: {
     showActive () {
       this.isActive = !this.isActive

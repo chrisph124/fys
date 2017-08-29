@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import buyComp from '~components/indexComp/reb-buy.vue'
+import buyComp from '~/components/indexComp/reb-buy.vue'
 export default {
   components: { buyComp },
   data () {

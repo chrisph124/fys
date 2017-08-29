@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import myAccount from '~components/registerComp/my-account.vue'
+import myAccount from '~/components/registerComp/my-account.vue'
 export default {
   components: { myAccount },
   data () {

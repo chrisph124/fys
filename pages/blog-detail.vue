@@ -88,8 +88,8 @@ export default {
 </script>-->
 
 <script>
-  import axios from '~plugins/axios'
-  import leftCol from '~components/blogComp/blogLeftCol.vue'
+  import axios from '~/plugins/axios'
+  import leftCol from '~/components/blogComp/blogLeftCol.vue'
 
   export default {
     components: {leftCol},

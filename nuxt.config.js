@@ -21,7 +21,7 @@ module.exports = {
   css: [
     {src: 'bulma/css/bulma.css'},
     {src: 'font-awesome/css/font-awesome.css'},
-    {src: '~assets/css/main.css'}
+    {src: '~/assets/css/main.css'}
   ],
   router: {
     extendRoutes (routes, resolve) {
@@ -47,7 +47,11 @@ module.exports = {
       })
     }
   },
-  plugins: ['~plugins/filters.js', '~plugins/moment.js'],
+  performance: {
+    gzip: true
+  },
+  cache: true,
+  plugins: ['~/plugins/filters.js', '~/plugins/moment.js'],
   /*
    ** Add axios globally
    */

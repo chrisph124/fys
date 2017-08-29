@@ -25,29 +25,33 @@
 </template>
 
 <script>
-import axios from '~plugins/axios'
-import search from '~components/search/search.vue'
-import infoIcon from '~components/indexComp/info-icon-block.vue'
-import realEstate from '~components/indexComp/real-estate-block.vue'
-import infoBlog from '~components/indexComp/info-block.vue'
-import findByBuilding from '~components/indexComp/findByBuilding.vue'
-import findByDistrict from '~components/indexComp/findByDistrict.vue'
-import whyUs from '~components/indexComp/why-us.vue'
+import axios from '~/plugins/axios'
+import search from '~/components/search/search.vue'
+import infoIcon from '~/components/indexComp/info-icon-block.vue'
+import realEstate from '~/components/indexComp/real-estate-block.vue'
+import infoBlog from '~/components/indexComp/info-block.vue'
+import findByBuilding from '~/components/indexComp/findByBuilding.vue'
+import findByDistrict from '~/components/indexComp/findByDistrict.vue'
+import whyUs from '~/components/indexComp/why-us.vue'
 export default {
-  components: { infoIcon, realEstate, infoBlog, findByBuilding, findByDistrict, whyUs, search },
+  components: { realEstate, infoBlog, findByBuilding, findByDistrict, infoIcon, whyUs, search },
   async asyncData () {
-    let data1 = await axios.get('/api/blogfornd')
-    let data2 = await axios.get('/api/blogforda')
-    let data3 = await axios.get('/api/blogformv')
+    let { data: data1 } = await axios.get('/api/blogfornd')
+    let { data: data2 } = await axios.get('/api/blogforda')
+    let { data: data3 } = await axios.get('/api/blogformv')
     return {
-      dataND: data1.data,
-      dataDA: data2.data,
-      dataMV: data3.data
+      dataND: data1,
+      dataDA: data2,
+      dataMV: data3
     }
   }
 }
 </script>
-
+let {x, y} = {x: 6, y: 8}
+x = obj.x
+y = obj.y
+{x: propX, y: propY} = obj
+propX = obj.x
 <style scoped>
 
 </style>

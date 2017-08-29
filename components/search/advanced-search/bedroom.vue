@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import buttons from '~components/search/advanced-search/btnBedroom'
+import buttons from '~/components/search/advanced-search/btnBedroom'
 export default {
   components: { buttons },
   data () {
@@ -53,7 +53,7 @@ export default {
 
 <style scoped>
 .dropdown-content {
-  width: 24rem;
+  width: 25rem;
   padding: 0.5rem;
   margin-top: 1px
 }
