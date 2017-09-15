@@ -10,13 +10,13 @@
       </div>
       <div class="dropdown-menu" id="dropdown-menu3" role="menu">
         <div class="dropdown-content">
-          <div v-for="item in amenities" :key="item">
+          <div v-for="(item, index) in amenities" :key="index">
             <label class="checkbox" :for="item.name">
               <input type="checkbox" :id="item.name"> {{item.name}}
             </label>
           </div>
           <hr class="dropdown-divider">
-          <div v-for="item in amenitiesForSale" :key="item">
+          <div v-for="(item, index) in amenitiesForSale" :key="index">
             <label class="checkbox" :for="item.name">
               <input type="checkbox" :id="item.name"> {{item.name}}
             </label>

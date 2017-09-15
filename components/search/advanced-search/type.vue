@@ -10,11 +10,12 @@
     </div>
     <div class="dropdown-menu" id="dropdown-menu3" role="menu">
       <div class="dropdown-content">
-        <div v-for="item in types" :key="item">
-          <label class="checkbox" :for="item.name">
-            <input type="checkbox" :id="item.name"> {{item.name}}
-          </label>
-        </div>
+        <div>
+            <span v-for="(item, index) of types" :key="item.index">
+              <input type="checkbox" :id="item.id">
+              <label :for="item.id">{{item.name}}</label>
+            </span>
+          </div>
       </div>
     </div>
   </div>
@@ -26,9 +27,9 @@ export default {
     return {
       isActive: false,
       types: [
-        { name: 'Nhà phố' },
-        { name: 'Căn hộ' },
-        { name: 'Biệt thự' }
+        { id: '01', name: 'Nhà phố' },
+        { id: '02', name: 'Căn hộ' },
+        { id: '03', name: 'Biệt thự' }
       ]
     }
   },
@@ -50,7 +51,7 @@ export default {
 .dropdown-content {
   margin-top: 1px;
   padding: 0.5rem;
-  width: 7rem
+  width: 7rem;
 }
 
 .dropdown .button:focus {
@@ -66,5 +67,49 @@ export default {
 
 .button span {
   color: #4a4a4a
+}
+
+input[type="checkbox"] {
+  display: none
+}
+
+input[type="checkbox"]+label {
+  display: block;
+  position: relative;
+  padding: 0 10px 0 25px;
+  margin-top: 10px;
+  color: black;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="checkbox"]+label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #00d1b2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+input[type="checkbox"]:checked+label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 </style>

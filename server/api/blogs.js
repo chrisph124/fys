@@ -63,28 +63,12 @@ router.get('/blogs/:id', (req, res, next) => {
 })
 
 router.get('/blogs/cate/:id', (req, res, next) => {
-<<<<<<< HEAD
-  /*let id = req.params.id;
-  blog.selectBlogForCate(id)
-    .then(data => {
-      res.json(data);
-    })
-    .catch(error => {
-      res.json({
-        success: false,
-        error: error.message || error
-      });
-    }) */
-  let id = req.params.id
-  let q = parseInt(req.query.page) || 1
-  let n = 15
-  let pgfrom = 0
-=======
+
   let id = req.params.id;
   let q = parseInt(req.query.page) || 1;
   let n = 15;
   let pgfrom = 0;
->>>>>>> 7b91eb9ec28d0038af5fd287fbef5ffc9f26bf80
+
   if (q != undefined && q > 0) {
     pgfrom = (pgfrom + q - 1) * n
   } else {
@@ -124,22 +108,11 @@ router.get('/blogs/cate/:id', (req, res, next) => {
 })
 
 router.get('/blogs/', (req, res, next) => {
-<<<<<<< HEAD
-  // console.log(req.query)
-  let q = parseInt(req.query.page)
+  let q = parseInt(req.query.trang)
   let n = 15
   let pgfrom = 0
   if (q != undefined && q > 0) {
     pgfrom = (pgfrom + q - 1) * n
-=======
-  //console.log(req.query)
-  let q = parseInt(req.query.trang);
-  let n = 15;
-  let pgfrom = 0;
-  if (q != undefined && q > 0) {
-
-    pgfrom = (pgfrom + q - 1) * n;
->>>>>>> 7b91eb9ec28d0038af5fd287fbef5ffc9f26bf80
   } else {
     q = 1
   }

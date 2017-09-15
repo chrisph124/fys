@@ -47,11 +47,6 @@ export default {
   }
 }
 </script>
-let {x, y} = {x: 6, y: 8}
-x = obj.x
-y = obj.y
-{x: propX, y: propY} = obj
-propX = obj.x
 <style scoped>
 
 </style>

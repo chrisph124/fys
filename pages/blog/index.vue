@@ -29,7 +29,7 @@
     components: {leftCol, rightCol, search},
     async asyncData ({params}) {
       let dataBlog = await axios.get(`/api/blogs/?trang=${params.pages}`)
-      // console.log(dataBlog.data)
+      console.log('11111')
         /* let {dataDetail} = await axios.get('/api/blogs/:id') */
       return {
         blogsData: dataBlog.data.blogs,
