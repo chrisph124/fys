@@ -34,6 +34,9 @@ export default {
         position: { lat: 21.029132, lng: 105.806759 }
       }, {
         position: { lat: 21.016013, lng: 105.844668 }
+      },
+      {
+        position: { lat: 21.0296999, lng: 105.8462968 }
       }],
       styles: [
         {

@@ -21,38 +21,13 @@ module.exports = {
   css: [
     {src: 'bulma/css/bulma.css'},
     {src: 'font-awesome/css/font-awesome.css'},
-    {src: '~assets/css/main.css'}
+    {src: '~/assets/css/main.css'}
   ],
-  router: {
-    extendRoutes (routes, resolve) {
-      routes.push({
-        name: 'blog_id',
-        path: '/blog/:id',
-        component: resolve(__dirname, 'pages/blog-detail.vue')
-      })
-      routes.push({
-        name: 'blog_cate',
-        path: '/blog/cate/:id',
-        component: resolve(__dirname, 'pages/blog-cate.vue')
-      })
-      routes.push({
-        name: 'blog_cate_paging',
-        path: '/blog/cate/:id/page/:page',
-        component: resolve(__dirname, 'pages/blog-cate.vue')
-      })
-      routes.push({
-        name: 'blog_paging',
-        path: '/blog/page/:pages',
-        component: resolve(__dirname, 'pages/blog.vue')
-      })
-      routes.push({
-        name: 'post_paging',
-        path: '/for_sale/page/:pages',
-        component: resolve(__dirname, 'pages/for_sale.vue')
-      })
-    }
+  performance: {
+    gzip: true
   },
-  plugins: ['~plugins/filters.js', '~plugins/moment.js'],
+  cache: true,
+  plugins: ['~/plugins/filters.js', '~/plugins/moment.js'],
   axios: {
     baseURL: 'http://127.0.0.1:3000/api',
     debug: true

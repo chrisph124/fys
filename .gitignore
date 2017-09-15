@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+# cache
+.cache/
+
 # .idea folder
 .idea
 

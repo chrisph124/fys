@@ -24,7 +24,7 @@ class Post extends Model {
       AND category.category_id = post.category_id  
       AND status = true 
       ORDER BY post_id DESC
-      LIMIT $1 OFFSET $2`, [n, pgfrom]);
+      LIMIT $1 OFFSET $2`, [n, pgfrom])
   }
 
   countAll () {
@@ -38,7 +38,7 @@ class Post extends Model {
       AND district.provinceid = province.provinceid
       AND province."name" like 'Hà Nội'
       AND category.category_id = post.category_id  
-      AND status = true) as allPost`);
+      AND status = true) as allPost`)
   }
 }
 

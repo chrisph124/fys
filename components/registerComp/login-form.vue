@@ -45,8 +45,8 @@
 </template>
 
 <script>
-import forgotten from '~components/registerComp/forgotten-form.vue'
-import fbgg from '~components/registerComp/fb-gg-signup.vue'
+import forgotten from '~/components/registerComp/forgotten-form.vue'
+import fbgg from '~/components/registerComp/fb-gg-signup.vue'
 export default {
   components: { forgotten, fbgg },
   data () {

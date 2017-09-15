@@ -8,36 +8,36 @@
             <img src="~assets/img/fys-logo.png">
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/for_sale">
+            <a class="navbar-link" href="/for-sale">
               Bán
             </a>
             <div class="navbar-dropdown ">
-              <a class="navbar-item " href="/for_sale/house">
+              <a class="navbar-item " href="/for-sale/house">
                 Nhà
               </a>
-              <a class="navbar-item " href="/for_sale/apartment">
+              <a class="navbar-item " href="/for-sale/apartment">
                 Căn hộ
               </a>
-              <a class="navbar-item " href="/for_sale/villa">
+              <a class="navbar-item " href="/for-sale/villa">
                 Biệt thự
               </a>
             </div>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/for_rent">
+            <a class="navbar-link" href="/for-rent">
               Cho thuê
             </a>
             <div class="navbar-dropdown ">
-              <a class="navbar-item " href="/for_rent/house">
+              <a class="navbar-item " href="/for-rent/house">
                 Nhà trọ
               </a>
-              <a class="navbar-item " href="/for_rent/room">
+              <a class="navbar-item " href="/for-rent/room">
                 Phòng trọ
               </a>
-              <a class="navbar-item " href="/for_rent/apartment">
+              <a class="navbar-item " href="/for-rent/apartment">
                 Căn hộ
               </a>
-              <a class="navbar-item " href="/for_rent/villa">
+              <a class="navbar-item " href="/for-rent/villa">
                 Biệt thự
               </a>
   
@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import myAccount from '~components/registerComp/my-account.vue'
+import myAccount from '~/components/registerComp/my-account.vue'
 export default {
   components: { myAccount },
   data () {

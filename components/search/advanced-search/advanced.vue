@@ -36,16 +36,14 @@
         </div>
         <hr class="dropdown-divider">
         <div class="navbar-item">
-          <small>Phòng ngủ</small>
+          <small>Phòng tắm</small>
           <div>
-            <button 
-            class="button is-default" 
-            :class="{'is-primary': bed.status}" 
-            v-for="(bed, index) of beds" 
-            :key="index"
-            @click="primaryFunc(true)">
-              {{bed.name}}
-            </button>
+            <buttons 
+        v-for="(button, index) of buttons"
+        :key='index'
+        :item='button'
+        :is-status='button.status'
+        @activate="activateButton(button)"/>
           </div>
         </div>
       </div>
@@ -54,12 +52,14 @@
 </template>
 
 <script>
+import buttons from '~/components/search/advanced-search/btnBedroom'
 export default {
+  components: { buttons },
   data () {
     return {
       isPrimary: false,
       isActive: false,
-      beds: [
+      buttons: [
         { name: 'Tất cả', status: false },
         { name: '1+', status: false },
         { name: '2+', status: false },
@@ -108,11 +108,10 @@ export default {
     showPrimary (item) {
       this.isPrimary = !this.isPrimary
     },
-    isActive (eachItem) {
-      return this.status === eachItem
-    },
-    primaryFunc (eachItem) {
-      this.status = eachItem
+    activateButton (activatedButton) {
+      for (let button of this.buttons) {
+        button.status = button === activatedButton
+      }
     }
   }
 }

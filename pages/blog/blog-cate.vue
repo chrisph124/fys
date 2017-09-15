@@ -11,11 +11,11 @@
 
 
 <script>
-  import axios from '~plugins/axios'
-  import search from '~components/search/search.vue'
-  import leftCol from '~components/blogComp/blogLeftCol.vue'
-  import rightCol from '~components/blogComp/blogRightCol.vue'
-  /* import detailCol from '~components/blogComp/blogDetail.vue' */
+  import axios from '~/plugins/axios'
+  import search from '~/components/search/search.vue'
+  import leftCol from '~/components/blogComp/blogLeftCol.vue'
+  import rightCol from '~/components/blogComp/blogRightCol.vue'
+  /* import detailCol from '~/components/blogComp/blogDetail.vue' */
   export default {
     components: {leftCol, rightCol, search},
     async asyncData ({params}) {

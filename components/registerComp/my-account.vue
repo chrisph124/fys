@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import signupForm from '~components/registerComp/signup-form.vue'
-import loginForm from '~components/registerComp/login-form.vue'
+import signupForm from '~/components/registerComp/signup-form.vue'
+import loginForm from '~/components/registerComp/login-form.vue'
 export default {
   components: { signupForm, loginForm },
   data () {

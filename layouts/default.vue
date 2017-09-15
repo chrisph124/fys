@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import MyFooter from '~components/Footer.vue'
-import MyNav from '~components/Nav.vue'
+import MyFooter from '~/components/Footer.vue'
+import MyNav from '~/components/Nav.vue'
 
 export default {
   components: {
@@ -18,9 +18,6 @@ export default {
 </script>
 
 <style>
-body {
-  overflow-x: initial
-}
 .container {
   margin: 0;
   width: 100%;
@@ -28,7 +25,4 @@ body {
   text-align: center;
 }
 
-#nuxt {
-  margin: 0 0 1rem 0
-}
 </style>
