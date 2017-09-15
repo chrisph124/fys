@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav class="navbar columns is-marginless">
-  
+
       <div id="navMenuExample" class="navbar-menu">
         <div class="navbar-start">
           <a class="navbar-item" href="/" id='logo'>
@@ -40,7 +40,7 @@
               <a class="navbar-item " href="/for-rent/villa">
                 Biệt thự
               </a>
-  
+
             </div>
           </div>
           <a class="navbar-item" href="/blog">
@@ -57,7 +57,7 @@
           </a>
           <my-account :class="{'is-active': actived}" @close="toggleModal" />
         </div>
-  
+
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
@@ -140,6 +140,6 @@ a.navbar-link:hover {
 }
 
 a.button {
-  font-size: 1.2rem
+  font-size: 1rem
 }
 </style>

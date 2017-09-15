@@ -1,45 +1,11 @@
 /**
  * Created by msi on 19/07/2017.
  */
-import {
-  Router
-} from 'express'
+import Router from 'express'
 let router = Router()
 
-const {
-  db
-} = require('../pgp')
-const Blog = require('../model/blog')
-const blog = new Blog(db)
-
-// router.get('/blog', (req, res, next) => {
-//   db.task(t => {
-//     return t.batch([
-//       blog.selectBlog(),
-//       blog.selectCate()
-//     ])
-//   })
-//   .then(data => {
-//     res.json({blogs: data})
-//   })
-//   .catch(error => {
-//     res.json({
-//       success: false,
-//       error: error.message || error
-//     })
-//   })
-
-// blog.selectBlog()
-//   .then(data => {
-//     res.json({blogs: data})
-//   })
-//   .catch(error => {
-//     res.json({
-//       success: false,
-//       error: error.message || error
-//     })
-//   })
-// })
+const db = require('../pgp')
+const blog = require('../model/blog')
 
 router.get('/get-cate-sidebar', (req, res, next) => {
   blog.selectCate()
@@ -115,10 +81,8 @@ router.get('/blogs/:slug', (req, res, next) => {
     ])
   })
   .then(data => {
-    let countAll = 0
     let page = 0
     data[1].forEach((index) => {
-      countAll = index.count
       page = Math.ceil(index.count / n, 0)
     })
     if (q > page) {
@@ -157,10 +121,8 @@ router.get('/blogs/', (req, res, next) => {
     ])
   })
     .then(data => {
-      let countAll = 0
       let page = 0
       data[1].forEach((index) => {
-        countAll = index.count
         page = Math.ceil(index.count / n, 0)
       })
       if (q > page) {

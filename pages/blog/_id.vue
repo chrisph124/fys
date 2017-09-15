@@ -15,7 +15,7 @@
                 </nav>
                 <div class="content">
                     <div class="has-text-centered">
-                        <h1>{{ details.title }}</h1>
+                        <h2>{{ details.title }}</h2>
                         <span>
                     <small>
                     <i class="fa fa-calendar"></i>
@@ -24,11 +24,11 @@
                 </span>
                         <span>
                     <i class="fa fa-tags"></i>
-                    <a href="#">{{details.cate_name}}</a>
+                    <nuxt-link :to="'/blog/category/' + details.blog_cate_slug">{{details.name}}</nuxt-link>
                 </span>
                         <span>
                     <i class="fa fa-user-o"></i>
-                    <a href="#">{{details.first_name}} {{details.last_name}}</a>
+                    <nuxt-link to="/author">{{details.first_name}} {{details.last_name}}</nuxt-link>
                 </span>
                         <span>
                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -76,6 +76,8 @@
     }
 
     span, span a {
-        margin-right: 0.5rem
+        margin-right: 0.5rem;
+        font-size: 0.9rem;
+        color: grey
     }
 </style>

@@ -3,16 +3,11 @@
  */
 'use strict'
 
-const Model = require('./model')
+const db = require('../pgp.js')
 
-class Post extends Model {
-  constructor (db) {
-    super(db)
-    this.db = db
-  }
-
-  selectByPagination (n, pgfrom) {
-    return this.db.many(`
+module.exports = {
+  selectByPagination: (n, pgfrom) => {
+    return db.many(`
       SELECT post_id, title, price, deposit, address, phone, content, status, longitude, latitude, created_at,
       province.name as province, category.name as category,
       district.name as district, ward.name as ward
@@ -21,14 +16,13 @@ class Post extends Model {
       AND ward.districtid = district.districtid
       AND district.provinceid = province.provinceid
       AND province."name" like 'Hà Nội'
-      AND category.category_id = post.category_id  
-      AND status = true 
+      AND category.category_id = post.category_id
+      AND status = true
       ORDER BY post_id DESC
       LIMIT $1 OFFSET $2`, [n, pgfrom])
-  }
-
-  countAll () {
-    return this.db.many(`
+  },
+  countAll: () => {
+    return db.many(`
       SELECT count(*) FROM
       (SELECT post_id, title, price, deposit, address, phone, content, status, longitude, latitude, created_at,
       province.name as province, category.name as category
@@ -37,9 +31,7 @@ class Post extends Model {
       AND ward.districtid = district.districtid
       AND district.provinceid = province.provinceid
       AND province."name" like 'Hà Nội'
-      AND category.category_id = post.category_id  
+      AND category.category_id = post.category_id
       AND status = true) as allPost`)
   }
 }
-
-module.exports = Post

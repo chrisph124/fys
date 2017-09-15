@@ -1,15 +1,13 @@
 /**
  * Created by msi on 19/08/2017.
  */
-import {Router} from 'express'
+import Router from 'express'
 let router = Router()
 
-const {db} = require('../pgp')
-const Post = require('../model/post')
-const post = new Post(db)
+const db = require('../pgp')
+const post = require('../model/post')
 
 router.get('/posts/', (req, res, next) => {
-  console.log('ok')
   let q = parseInt(req.query.page)
   let n = 15
   let pgfrom = 0
@@ -27,10 +25,8 @@ router.get('/posts/', (req, res, next) => {
     ])
   })
     .then(data => {
-      let countAll = 0
       let page = 0
       data[1].forEach((index) => {
-        countAll = index.count
         page = Math.ceil(index.count / n, 0)
       })
       if (q > page) {

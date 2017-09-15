@@ -3,11 +3,11 @@
  */
 'use strict'
 
-const Model = require('./model')
+const db = require('../pgp.js')
 
-class Blog extends Model {
-  selectBlog () {
-    return this.db.any(`
+module.exports = {
+  selectBlog: () => {
+    return db.any(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
     FROM blog, fys_user, blog_category, blog_picture
@@ -15,16 +15,14 @@ class Blog extends Model {
     AND blog.blog_cate_id = blog_category.blog_cate_id
     AND blog_picture.blog_id = blog.blog_id
     ORDER BY blog.blog_id DESC`)
-  }
-
-  selectCate () {
-    return this.db.any(`
+  },
+  selectCate: () => {
+    return db.any(`
     select blog_cate_slug as cate_slug, name from blog_category
     `)
-  }
-
-  selectBlogForCate (slug, n, pgfrom) {
-    return this.db.many(`
+  },
+  selectBlogForCate: (slug, n, pgfrom) => {
+    return db.many(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
     FROM blog, fys_user, blog_category, blog_picture
@@ -35,10 +33,9 @@ class Blog extends Model {
     ORDER BY blog.blog_id DESC
     LIMIT $2 OFFSET $3`,
     [slug, n, pgfrom])
-  }
-
-  selectBlogForND () {
-    return this.db.any(`
+  },
+  selectBlogForND: () => {
+    return db.any(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
     FROM blog, fys_user, blog_category, blog_picture
@@ -48,10 +45,9 @@ class Blog extends Model {
     AND name = 'Nhà đất'
     ORDER BY blog.blog_id DESC
     LIMIT 15`)
-  }
-
-  selectBlogForDA () {
-    return this.db.any(`
+  },
+  selectBlogForDA: () => {
+    return db.any(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
     FROM blog, fys_user, blog_category, blog_picture
@@ -61,10 +57,9 @@ class Blog extends Model {
     AND name = 'Dự án mới'
     ORDER BY blog.blog_id DESC
     LIMIT 15`)
-  }
-
-  selectBlogForMV () {
-    return this.db.any(`
+  },
+  selectBlogForMV: () => {
+    return db.any(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
     FROM blog, fys_user, blog_category, blog_picture
@@ -74,10 +69,9 @@ class Blog extends Model {
     AND name = 'Mẹo vặt'
     ORDER BY blog.blog_id DESC
     LIMIT 15`)
-  }
-
-  detailBlog (id) {
-    return this.db.oneOrNone(`
+  },
+  detailBlog: (id) => {
+    return db.oneOrNone(`
       SELECT blog.blog_id, title, content, create_at, name, blog_cate_slug, last_name, first_name, url
       FROM blog, fys_user, blog_category, blog_picture
       WHERE blog.blog_cate_id = blog_category.blog_cate_id
@@ -85,10 +79,9 @@ class Blog extends Model {
       AND blog.blog_id = blog_picture.blog_id
       AND blog.blog_id = $1
       LIMIT 1`, id)
-  }
-
-  selectByPagination (n, pgfrom) {
-    return this.db.many(`
+  },
+  selectByPagination: (n, pgfrom) => {
+    return db.many(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
     FROM blog, fys_user, blog_category, blog_picture
@@ -97,14 +90,12 @@ class Blog extends Model {
     AND blog_picture.blog_id = blog.blog_id
     ORDER BY blog.blog_id DESC
     LIMIT $1 OFFSET $2`, [n, pgfrom])
-  }
-
-  countAll () {
-    return this.db.many(`SELECT count(*) FROM blog`)
-  }
-
-  countByCate (slug) {
-    return this.db.many(`
+  },
+  countAll: () => {
+    return db.many(`SELECT count(*) FROM blog`)
+  },
+  countByCate: (slug) => {
+    return db.many(`
       SELECT b.*, bc.name as name
       FROM blog as b
       INNER JOIN blog_category as bc
@@ -112,5 +103,3 @@ class Blog extends Model {
       WHERE bc.blog_cate_slug = $1`, slug)
   }
 }
-
-module.exports = Blog
