@@ -19,7 +19,7 @@
     "express": "^4.15.3",
     "font-awesome": "^4.7.0",
     "moment": "^2.18.1",
-    "nuxt": "^1.0.0-rc6",
+    "nuxt": "^1.0.0-rc10",
     "pg": "6.4.2",
     "pg-monitor": "^0.8.2",
     "pg-promise": "^6.3.5",

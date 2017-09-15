@@ -6,11 +6,6 @@
 const Model = require('./model')
 
 class Blog extends Model {
-  constructor (db) {
-    super(db)
-    this.db = db
-  }
-
   selectBlog () {
     return this.db.any(`
     SELECT DISTINCT ON (blog.blog_id)
@@ -19,11 +14,16 @@ class Blog extends Model {
     WHERE blog.user_id = fys_user.user_id
     AND blog.blog_cate_id = blog_category.blog_cate_id
     AND blog_picture.blog_id = blog.blog_id
-    ORDER BY blog.blog_id DESC
-    LIMIT 15 `)
+    ORDER BY blog.blog_id DESC`)
   }
 
-  selectBlogForCate (id, n , pgfrom) {
+  selectCate () {
+    return this.db.any(`
+    select blog_cate_slug as cate_slug, name from blog_category
+    `)
+  }
+
+  selectBlogForCate (slug, n, pgfrom) {
     return this.db.many(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
@@ -31,9 +31,10 @@ class Blog extends Model {
     WHERE blog.user_id = fys_user.user_id
     AND blog.blog_cate_id = blog_category.blog_cate_id
     AND blog_picture.blog_id = blog.blog_id
-    AND blog_category.blog_cate_id = $1
+    AND blog_category.blog_cate_slug = $1
     ORDER BY blog.blog_id DESC
-    LIMIT $2 OFFSET $3`, [id, n, pgfrom]);
+    LIMIT $2 OFFSET $3`,
+    [slug, n, pgfrom])
   }
 
   selectBlogForND () {
@@ -75,19 +76,18 @@ class Blog extends Model {
     LIMIT 15`)
   }
 
-
   detailBlog (id) {
     return this.db.oneOrNone(`
-    SELECT blog.blog_id, title, content, create_at, name as cate_name, last_name, first_name, url
-    FROM blog, fys_user, blog_category, blog_picture
-    WHERE blog.blog_cate_id = blog_category.blog_cate_id 
-    AND fys_user.user_id = blog.user_id 
-    AND blog.blog_id = blog_picture.blog_id
-    AND blog.blog_id = $1
-    LIMIT 1`, id);
+      SELECT blog.blog_id, title, content, create_at, name, blog_cate_slug, last_name, first_name, url
+      FROM blog, fys_user, blog_category, blog_picture
+      WHERE blog.blog_cate_id = blog_category.blog_cate_id
+      AND fys_user.user_id = blog.user_id
+      AND blog.blog_id = blog_picture.blog_id
+      AND blog.blog_id = $1
+      LIMIT 1`, id)
   }
 
-  selectByPagination(n, pgfrom){
+  selectByPagination (n, pgfrom) {
     return this.db.many(`
     SELECT DISTINCT ON (blog.blog_id)
     blog.blog_id, title, content, create_at, name, last_name, first_name, url
@@ -96,17 +96,21 @@ class Blog extends Model {
     AND blog.blog_cate_id = blog_category.blog_cate_id
     AND blog_picture.blog_id = blog.blog_id
     ORDER BY blog.blog_id DESC
-    LIMIT $1 OFFSET $2`, [n, pgfrom]);
+    LIMIT $1 OFFSET $2`, [n, pgfrom])
   }
 
-  countAll() {
-    return this.db.many(`SELECT count(*) FROM blog`);
+  countAll () {
+    return this.db.many(`SELECT count(*) FROM blog`)
   }
 
-  countByCate(id) {
-    return this.db.many(`SELECT count(*) FROM blog WHERE blog_cate_id = $1`, id);
+  countByCate (slug) {
+    return this.db.many(`
+      SELECT b.*, bc.name as name
+      FROM blog as b
+      INNER JOIN blog_category as bc
+      ON b.blog_cate_id = bc.blog_cate_id
+      WHERE bc.blog_cate_slug = $1`, slug)
   }
-
 }
 
 module.exports = Blog

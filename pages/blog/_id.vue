@@ -1,36 +1,16 @@
 <template>
-    <!--<section class="container">
-        <img :src="details.url" alt="Nuxt.js Logo" class="logo"/>
-        <h1 class="title">
-            Blog
-        </h1>
-        <h2 class="info">
-            # {{ details.blog_id }}
-        </h2>
-        <nuxt-link class="button" to="/blog">
-
-        </nuxt-link>
-        <h1>{{ details.title }}</h1>
-        <h3>{{ details.first_name}} {{ details.last_name }} </h3>
-        <h3>{{details.create_at | moment("DD/MM/YYYY")}}</h3>
-        <h4>{{details.cate_name}}</h4>
-        <p>{{details.content}}</p>
-    </section>-->
     <div>
         <div class="columns is-marginless">
-            <left-col/>
+            <left-col :categories="categories"/>
             <div class="col-right">
                 <nav class="breadcrumb">
                     <ul>
                         <li>
-                            <a href="#">Blog</a>
+                            <nuxt-link to="/blog">Blog</nuxt-link>
                         </li>
                         <li>
-                            <a href="#">{{details.cate_name}}</a>
+                            <nuxt-link :to="'/blog/category/' + details.blog_cate_slug">{{details.name}}</nuxt-link>
                         </li>
-                        <!--<li class="is-active">
-                            <a href="#">{{details.title | truncate(10)}}</a>
-                        </li>-->
                     </ul>
                 </nav>
                 <div class="content">
@@ -65,28 +45,6 @@
 
 </template>
 
-<!--<script>
-import axios from '~plugins/axios'
-
-export default {
-  name: 'id',
-  asyncData ({ params, error }) {
-    return axios.get('/api/users/' + params.id)
-    .then((res) => {
-      return { user: res.data }
-    })
-    .catch((e) => {
-      error({ statusCode: 404, message: 'User not found' })
-    })
-  },
-  head () {
-    return {
-      title: `User: ${this.user.name}`
-    }
-  }
-}
-</script>-->
-
 <script>
   import axios from '~/plugins/axios'
   import leftCol from '~/components/blogComp/blogLeftCol.vue'
@@ -94,9 +52,12 @@ export default {
   export default {
     components: {leftCol},
     async asyncData ({params}) {
-      let dataDetail = await axios.get('/api/blogs/' + `${params.id}`)
-      // console.log(dataDetail)
+      let dataDetail = await axios.get('/api/blog/' + `${params.id}`)
+      console.log(dataDetail)
+      let categories = await axios.get(`/api/get-cate-sidebar`)
+      console.log(dataDetail.data)
       return {
+        categories: categories.data,
         details: dataDetail.data
       }
     },

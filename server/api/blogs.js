@@ -1,17 +1,50 @@
 /**
  * Created by msi on 19/07/2017.
  */
-import {Router} from 'express'
+import {
+  Router
+} from 'express'
 let router = Router()
 
-const {db} = require('../pgp')
+const {
+  db
+} = require('../pgp')
 const Blog = require('../model/blog')
 const blog = new Blog(db)
 
-router.get('/blogs/index', (req, res, next) => {
-  blog.selectBlog()
+// router.get('/blog', (req, res, next) => {
+//   db.task(t => {
+//     return t.batch([
+//       blog.selectBlog(),
+//       blog.selectCate()
+//     ])
+//   })
+//   .then(data => {
+//     res.json({blogs: data})
+//   })
+//   .catch(error => {
+//     res.json({
+//       success: false,
+//       error: error.message || error
+//     })
+//   })
+
+// blog.selectBlog()
+//   .then(data => {
+//     res.json({blogs: data})
+//   })
+//   .catch(error => {
+//     res.json({
+//       success: false,
+//       error: error.message || error
+//     })
+//   })
+// })
+
+router.get('/get-cate-sidebar', (req, res, next) => {
+  blog.selectCate()
     .then(data => {
-      res.json({blogs: data})
+      res.status(200).json(data)
     })
     .catch(error => {
       res.json({
@@ -48,7 +81,7 @@ router.get('/blogformv', (req, res, next) => {
     })
 })
 
-router.get('/blogs/:id', (req, res, next) => {
+router.get('/blog/:id', (req, res, next) => {
   let id = req.params.id
   blog.detailBlog(id)
     .then(data => {
@@ -62,14 +95,13 @@ router.get('/blogs/:id', (req, res, next) => {
     })
 })
 
-router.get('/blogs/cate/:id', (req, res, next) => {
+router.get('/blogs/:slug', (req, res, next) => {
+  let slug = req.params.slug
+  let q = parseInt(req.query.page) || 1
+  let n = 15
+  let pgfrom = 0
 
-  let id = req.params.id;
-  let q = parseInt(req.query.page) || 1;
-  let n = 15;
-  let pgfrom = 0;
-
-  if (q != undefined && q > 0) {
+  if (q !== undefined && q > 0) {
     pgfrom = (pgfrom + q - 1) * n
   } else {
     q = 1
@@ -77,28 +109,28 @@ router.get('/blogs/cate/:id', (req, res, next) => {
 
   db.task(t => {
     return t.batch([
-      blog.selectBlogForCate(id, n, pgfrom),
-      blog.countByCate(id),
+      blog.selectBlogForCate(slug, n, pgfrom),
+      blog.countByCate(slug),
       q
     ])
   })
-    .then(data => {
-      let countAll = 0
-      let page = 0
-      data[1].forEach((index) => {
-        countAll = index.count
-        page = Math.ceil(index.count / n, 0)
-      })
-      if (q > page) {
-        q = 1
-      }
-      res.json({
-        blogs: data[0],
-        countAll: data[1],
-        allpage: page,
-        pageCurrent: q
-      })
+  .then(data => {
+    let countAll = 0
+    let page = 0
+    data[1].forEach((index) => {
+      countAll = index.count
+      page = Math.ceil(index.count / n, 0)
     })
+    if (q > page) {
+      q = 1
+    }
+    res.json({
+      blogs: data[0],
+      countAll: data[1],
+      allpage: page,
+      pageCurrent: q
+    })
+  })
     .catch(error => {
       res.json({
         success: false,
@@ -111,7 +143,7 @@ router.get('/blogs/', (req, res, next) => {
   let q = parseInt(req.query.trang)
   let n = 15
   let pgfrom = 0
-  if (q != undefined && q > 0) {
+  if (q !== undefined && q > 0) {
     pgfrom = (pgfrom + q - 1) * n
   } else {
     q = 1

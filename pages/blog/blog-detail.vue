@@ -1,21 +1,4 @@
 <template>
-    <!--<section class="container">
-        <img :src="details.url" alt="Nuxt.js Logo" class="logo"/>
-        <h1 class="title">
-            Blog
-        </h1>
-        <h2 class="info">
-            # {{ details.blog_id }}
-        </h2>
-        <nuxt-link class="button" to="/blog">
-
-        </nuxt-link>
-        <h1>{{ details.title }}</h1>
-        <h3>{{ details.first_name}} {{ details.last_name }} </h3>
-        <h3>{{details.create_at | moment("DD/MM/YYYY")}}</h3>
-        <h4>{{details.cate_name}}</h4>
-        <p>{{details.content}}</p>
-    </section>-->
     <div>
         <div class="columns is-marginless">
             <left-col/>
@@ -23,14 +6,11 @@
                 <nav class="breadcrumb">
                     <ul>
                         <li>
-                            <a href="#">Blog</a>
+                            <nuxt-link to="/blog">Blog</nuxt-link>
                         </li>
                         <li>
-                            <a href="#">{{details.cate_name}}</a>
+                            <a href="#">{{details.name}}</a>
                         </li>
-                        <!--<li class="is-active">
-                            <a href="#">{{details.title | truncate(10)}}</a>
-                        </li>-->
                     </ul>
                 </nav>
                 <div class="content">

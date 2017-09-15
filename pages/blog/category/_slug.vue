@@ -2,7 +2,7 @@
     <div>
         <search/>
         <div class="columns is-marginless">
-            <left-col/>
+            <left-col :categories="categories"/>
             <right-col v-show="!isShow" :blogs="blogsData" :countall="countAlls" :allpage="allPages" :pagecurrent="pageCurrents" :url="urls"/>
             <!--<detail-col v-show="isShow" :details="detailsData"/>-->
         </div>
@@ -19,10 +19,12 @@
   export default {
     components: {leftCol, rightCol, search},
     async asyncData ({params}) {
-      let dataBlog = await axios.get(`/api/blogs/cate/` + `${params.id}` + `/?page=` + `${params.page}`)
+      let dataBlog = await axios.get(`/api/blogs/` + `${params.slug}` + `/?page=` + `${params.page}`)
+      let categories = await axios.get(`/api/get-cate-sidebar`)
       console.log('1222222')
         /* let {dataDetail} = await axios.get('/api/blogs/:id') */
       return {
+        categories: categories.data,
         blogsData: dataBlog.data.blogs,
         countAlls: dataBlog.data.countAll,
         allPages: dataBlog.data.allpage,

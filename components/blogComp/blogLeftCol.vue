@@ -5,20 +5,14 @@
                     Chuyên mục
                 </h5>
                 <div class="content">
-                    <ul class="is-marginless">
+                    <ul class="is-marginless" v-for="category in categories">
                         <li>
-                            <a href="/blog/cate/2">Dự án</a>
-                        </li>
-                        <li>
-                            <a href="/blog/cate/1">Nhà đất</a>
-                        </li>
-                        <li>
-                            <a href="/blog/cate/3">Mẹo vặt</a>
+                            <nuxt-link :to="'/blog/category/' + category.cate_slug">{{category.name}}</nuxt-link>
                         </li>
                     </ul>
                 </div>
             </div>
-    
+
             <div>
                 <h5 class="title is-5">
                     Bài viết nổi bật
@@ -37,7 +31,7 @@
                                 </h6>
                                 <small>{{data.date}}</small>
                             </div>
-    
+
                         </div>
                     </article>
                 </div>
@@ -47,6 +41,7 @@
 
 <script>
 export default {
+  props: ['categories'],
   data () {
     return {
       datas: [
