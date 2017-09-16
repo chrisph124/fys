@@ -8,7 +8,8 @@ const db = require('../pgp')
 const blog = require('../model/blog')
 
 router.get('/get-cate-sidebar', (req, res, next) => {
-  blog.selectCate()
+  blog
+    .selectCate()
     .then(data => {
       res.status(200).json(data)
     })
@@ -21,7 +22,8 @@ router.get('/get-cate-sidebar', (req, res, next) => {
 })
 
 router.get('/blogfornd', (req, res, next) => {
-  blog.selectBlogForND()
+  blog
+    .selectBlogForND()
     .then(data => {
       res.status(200).json(data)
     })
@@ -34,22 +36,21 @@ router.get('/blogfornd', (req, res, next) => {
 })
 
 router.get('/blogforda', (req, res, next) => {
-  blog.selectBlogForDA()
-    .then(data => {
-      res.json(data)
-    })
+  blog.selectBlogForDA().then(data => {
+    res.json(data)
+  })
 })
 
 router.get('/blogformv', (req, res, next) => {
-  blog.selectBlogForMV()
-    .then(data => {
-      res.json(data)
-    })
+  blog.selectBlogForMV().then(data => {
+    res.json(data)
+  })
 })
 
 router.get('/blog/:id', (req, res, next) => {
   let id = req.params.id
-  blog.detailBlog(id)
+  blog
+    .detailBlog(id)
     .then(data => {
       res.json(data)
     })
@@ -73,28 +74,29 @@ router.get('/blogs/:slug', (req, res, next) => {
     q = 1
   }
 
-  db.task(t => {
-    return t.batch([
-      blog.selectBlogForCate(slug, n, pgfrom),
-      blog.countByCate(slug),
-      q
-    ])
-  })
-  .then(data => {
-    let page = 0
-    data[1].forEach((index) => {
-      page = Math.ceil(index.count / n, 0)
+  db
+    .task(t => {
+      return t.batch([
+        blog.selectBlogForCate(slug, n, pgfrom),
+        blog.countByCate(slug),
+        q
+      ])
     })
-    if (q > page) {
-      q = 1
-    }
-    res.json({
-      blogs: data[0],
-      countAll: data[1],
-      allpage: page,
-      pageCurrent: q
+    .then(data => {
+      let page = 0
+      data[1].forEach(index => {
+        page = Math.ceil(index.count / n, 0)
+      })
+      if (q > page) {
+        q = 1
+      }
+      res.json({
+        blogs: data[0],
+        countAll: data[1],
+        allpage: page,
+        pageCurrent: q
+      })
     })
-  })
     .catch(error => {
       res.json({
         success: false,
@@ -113,16 +115,13 @@ router.get('/blogs/', (req, res, next) => {
     q = 1
   }
 
-  db.task(t => {
-    return t.batch([
-      blog.selectByPagination(n, pgfrom),
-      blog.countAll(),
-      q
-    ])
-  })
+  db
+    .task(t => {
+      return t.batch([blog.selectByPagination(n, pgfrom), blog.countAll(), q])
+    })
     .then(data => {
       let page = 0
-      data[1].forEach((index) => {
+      data[1].forEach(index => {
         page = Math.ceil(index.count / n, 0)
       })
       if (q > page) {

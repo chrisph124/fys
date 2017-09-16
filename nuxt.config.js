@@ -27,7 +27,7 @@ module.exports = {
     gzip: true
   },
   cache: true,
-  plugins: ['~/plugins/filters.js', '~/plugins/moment.js'],
+  plugins: ['~/plugins/filters.js', '~/plugins/moment.js', '~/plugins/carousel.js'],
   axios: {
     baseURL: 'http://127.0.0.1:3000/api',
     debug: true
