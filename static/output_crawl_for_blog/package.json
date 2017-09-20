@@ -1,0 +1,18 @@
+{
+  "name": "crawl_batdongsan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^2.5.0",
+    "electron": "^1.7.6",
+    "electron-prebuilt": "^1.4.13",
+    "nightmare": "^2.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
